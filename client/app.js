@@ -248,7 +248,7 @@ var QueueCollectionView = Backbone.View.extend({
 //create a view class for our turntables, which is instantiated in 'AppView'
 var PlayerView = Backbone.View.extend({
   //create a new audio element with controls
-  el: '<audio controls preload auto />',
+  el: '<iframe width="420" height="315" src="http://www.youtube.com/embed/XGSy3_Czz8k?autoplay=0"></iframe>',
 
   //callback is invoked when 'ended' is fired (when song is done playing)
   initialize: function(container) {
@@ -278,7 +278,7 @@ var PlayerView = Backbone.View.extend({
 
   //render the view for the player and get the song from the server
   render: function() {
-    return this.$el.attr('src', this.model ? 'https://trntbl3000.herokuapp.com/' + this.model.get('filename') : '');
+    // return this.$el.attr('src', this.model ? 'https://trntbl3000.herokuapp.com/' + this.model.get('filename') : '');
   }
 
 });
