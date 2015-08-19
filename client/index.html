@@ -67,17 +67,18 @@
       <!-- Captures input and calls YouTube API -->
       <script>
       function init(){
+      // THIS API KEY NEEDS TO BE HIDDEN.
         gapi.client.setApiKey('AIzaSyALWVtojqo6Cp-Ag3sIUsasidpZFrAdvto');
         gapi.client.load('trntbl4000', 'v1').then(function() { console.log('loaded'); 
         });
       }
-      // THIS API KEY NEEDS TO BE HIDDEN.
-    //   var input = $('#youtube');
-    //   function search() {
-    //   // Use the JavaScript client library to create a search.list() API call.
-    //   var request = gapi.client.youtube.search.list({
-    //     part: 'snippet'
-    //   });
+      var input = $('#youtube').value();
+      function search(input) {
+      var request = gapi.client.youtube.search.list({
+        part: 'snippet',
+        q: 'serrucho'
+      });
+    }
     
     // // Send the request to the API server,
     // // and invoke onSearchRepsonse() with the response.
