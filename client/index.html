@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+
+  <title>trntbl3000</title>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link async href="http://fonts.googleapis.com/css?family=Monoton" data-generated="http://enjoycss.com" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+
+  <!-- header -->
+  <div class="night-hotel">
+    <center>
+      <h1 id="logo">trntbl3000</h1>
+      <button class="pad" id="airHorn" style="background-image: url('assets/logo.png'); background-size:cover; width: 80px; height: 65px;"></button>
+    </center>
+  </div>
+
+  <!-- both audio players -->
+
+  <div align="center" class="decks row">
+
+    <span class="playerLeft col-md-5">
+      <!-- <audio src="audio/scarface.mp3" controls preload auto /> -->
+    </span>
+
+    <span id="sliderContainer" class="col-md-2"></span>
+
+    <span class="playerRight col-md-5">
+      <!-- <audio id="test" src="audio/big.mp3" controls preload auto /> -->
+    </span>
+
+  </div>
+
+  <div class="row">
+    <!-- song queue for the left turntable -->
+
+    <div class="col-md-3">
+      <center>
+        <h3>Queue A</h3>
+      </center>
+      <div id="queueViewA"></div>
+    </div>
+
+    <div class="col-md-6">
+      <center>
+        <h3>Library</h3>
+      </center>
+      <div id="libraryView"></div>
+    </div>
+
+    <!-- song queue for the right turntable -->
+
+    <div class="col-md-3">
+      <center>
+        <h3>Queue B</h3>
+      </center>
+      <div id="queueViewB"></div>
+    </div>
+  </div>
+
+  <!-- master song library -->
+  <!--<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4"></div>
+  </div>-->
+
+  <script src="lib/jquery-min.js" type="text/javascript"></script>
+  <script src="lib/underscore-min.js" type="text/javascript"></script>
+  <script src="lib/backbone-min.js" type="text/javascript"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="app.js" type="text/javascript"></script>
+
+</body>
+
+</html>
