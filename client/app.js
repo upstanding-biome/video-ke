@@ -188,11 +188,7 @@ var LibraryCollectionView = Backbone.View.extend({
   //render the view
   render: function() {
     this.$el.html('');
-    this.$el.append('<th></th>');
-    // this.$el.append('<th>Title</th>');
-    // this.$el.append('<th>Artist</th>');
-    // this.$el.append('<th>Genre</th>');
-    this.$el.append('<th></th>');
+    this.$el.append('<input></input>');
     this.$el.append('');
 
     //iterate through the collection and append each song to the table
