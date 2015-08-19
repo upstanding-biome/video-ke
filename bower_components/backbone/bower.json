@@ -1,7 +1,7 @@
 {
   "name"          : "backbone",
 
-  "version"       : "1.2.2",
+  "version"       : "1.2.1",
 
   "main"          : "backbone.js",
   "dependencies"  : {

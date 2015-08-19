@@ -53,7 +53,11 @@
 
   // Current version of the library. Keep in sync with `package.json`.
   Backbone.VERSION = '1.2.1';
+<<<<<<< HEAD
 >>>>>>> added bower and npm components
+=======
+>>>>>>> be0719434b9ea99c3f6ad931bbb0e6a156ff12a0
+>>>>>>> feat/search
 
   // For Backbone's purposes, jQuery, Zepto, Ender, or My Library (kidding) owns
   // the `$` variable.
@@ -88,7 +92,11 @@
 =======
   // Proxy Underscore methods to a Backbone class' prototype using a
   // particular attribute as the data argument
+<<<<<<< HEAD
 >>>>>>> added bower and npm components
+=======
+>>>>>>> be0719434b9ea99c3f6ad931bbb0e6a156ff12a0
+>>>>>>> feat/search
   var addMethod = function(length, method, attribute) {
     switch (length) {
       case 1: return function() {
@@ -108,7 +116,11 @@
       };
       case 4: return function(iteratee, defaultVal, context) {
         return _[method](this[attribute], iteratee, defaultVal, context);
+<<<<<<< HEAD
 >>>>>>> added bower and npm components
+=======
+>>>>>>> be0719434b9ea99c3f6ad931bbb0e6a156ff12a0
+>>>>>>> feat/search
       };
       default: return function() {
         var args = slice.call(arguments);
@@ -139,7 +151,11 @@
   };
 
 =======
+<<<<<<< HEAD
 >>>>>>> added bower and npm components
+=======
+>>>>>>> be0719434b9ea99c3f6ad931bbb0e6a156ff12a0
+>>>>>>> feat/search
   // Backbone.Events
   // ---------------
 
@@ -150,7 +166,11 @@
 =======
   // custom events. You may bind with `on` or remove with `off` callback
   // functions to an event; `trigger`-ing an event fires all callbacks in
+<<<<<<< HEAD
 >>>>>>> added bower and npm components
+=======
+>>>>>>> be0719434b9ea99c3f6ad931bbb0e6a156ff12a0
+>>>>>>> feat/search
   // succession.
   //
   //     var object = {};
@@ -173,7 +193,11 @@
   // Passes a normalized single event name and callback, as well as any
   // optional `opts`.
   var eventsApi = function(iteratee, memo, name, callback, opts) {
+<<<<<<< HEAD
 >>>>>>> added bower and npm components
+=======
+>>>>>>> be0719434b9ea99c3f6ad931bbb0e6a156ff12a0
+>>>>>>> feat/search
     var i = 0, names;
     if (name && typeof name === 'object') {
       // Handle event maps.
@@ -204,7 +228,11 @@
       memo = iteratee(memo, name, callback, opts);
     }
     return memo;
+<<<<<<< HEAD
 >>>>>>> added bower and npm components
+=======
+>>>>>>> be0719434b9ea99c3f6ad931bbb0e6a156ff12a0
+>>>>>>> feat/search
   };
 
   // Bind an event to a `callback` function. Passing `"all"` will bind
@@ -218,7 +246,11 @@
 =======
   // An internal use `on` function, used to guard the `listening` argument from
   // the public API.
+<<<<<<< HEAD
 >>>>>>> added bower and npm components
+=======
+>>>>>>> be0719434b9ea99c3f6ad931bbb0e6a156ff12a0
+>>>>>>> feat/search
   var internalOn = function(obj, name, callback, context, listening) {
     obj._events = eventsApi(onApi, obj._events || {}, name, callback, {
         context: context,
@@ -240,7 +272,11 @@
   // for easier unbinding later.
 =======
   // an event in another object... keeping track of what it's listening to.
+<<<<<<< HEAD
 >>>>>>> added bower and npm components
+=======
+>>>>>>> be0719434b9ea99c3f6ad931bbb0e6a156ff12a0
+>>>>>>> feat/search
   Events.listenTo =  function(obj, name, callback) {
     if (!obj) return this;
     var id = obj._listenId || (obj._listenId = _.uniqueId('l'));
@@ -311,7 +347,11 @@
 <<<<<<< HEAD
 =======
     // No events to consider.
+<<<<<<< HEAD
 >>>>>>> added bower and npm components
+=======
+>>>>>>> be0719434b9ea99c3f6ad931bbb0e6a156ff12a0
+>>>>>>> feat/search
     if (!events) return;
 
     var i = 0, listening;
@@ -374,7 +414,11 @@
   // the callback is invoked, it will be removed. When multiple events are
   // passed in using the space-separated syntax, the event will fire once for every
   // event you passed in, not once for a combination of all events
+<<<<<<< HEAD
 >>>>>>> added bower and npm components
+=======
+>>>>>>> be0719434b9ea99c3f6ad931bbb0e6a156ff12a0
+>>>>>>> feat/search
   Events.once =  function(name, callback, context) {
     // Map the event into a `{event: once}` object.
     var events = eventsApi(onceMap, {}, name, callback, _.bind(this.off, this));
@@ -567,7 +611,11 @@
       // Check for changes of `id`.
       if (this.idAttribute in attrs) this.id = attrs[this.idAttribute];
 
+<<<<<<< HEAD
 >>>>>>> added bower and npm components
+=======
+>>>>>>> be0719434b9ea99c3f6ad931bbb0e6a156ff12a0
+>>>>>>> feat/search
       // For each `set` attribute, update or delete the current value.
       for (var attr in attrs) {
         val = attrs[attr];
@@ -585,7 +633,11 @@
       this.id = this.get(this.idAttribute);
 
 =======
+<<<<<<< HEAD
 >>>>>>> added bower and npm components
+=======
+>>>>>>> be0719434b9ea99c3f6ad931bbb0e6a156ff12a0
+>>>>>>> feat/search
       // Trigger all relevant attribute changes.
       if (!silent) {
         if (changes.length) this._pending = options;
@@ -813,7 +865,11 @@
   // number of arguments they take.
 =======
   // Underscore methods that we want to implement on the Model.
+<<<<<<< HEAD
 >>>>>>> added bower and npm components
+=======
+>>>>>>> be0719434b9ea99c3f6ad931bbb0e6a156ff12a0
+>>>>>>> feat/search
   var modelMethods = { keys: 1, values: 1, pairs: 1, invert: 1, pick: 0,
       omit: 0, chain: 1, isEmpty: 1 };
 
@@ -857,7 +913,11 @@
   };
 
 =======
+<<<<<<< HEAD
 >>>>>>> added bower and npm components
+=======
+>>>>>>> be0719434b9ea99c3f6ad931bbb0e6a156ff12a0
+>>>>>>> feat/search
   // Define the Collection's inheritable methods.
   _.extend(Collection.prototype, Events, {
 
@@ -886,7 +946,11 @@
     // combination of the two.
 =======
     // Add a model, or list of models to the set.
+<<<<<<< HEAD
 >>>>>>> added bower and npm components
+=======
+>>>>>>> be0719434b9ea99c3f6ad931bbb0e6a156ff12a0
+>>>>>>> feat/search
     add: function(models, options) {
       return this.set(models, _.extend({merge: false}, options, addOptions));
     },
@@ -981,7 +1045,11 @@
             if (options.parse) attrs = existing.parse(attrs, options);
             existing.set(attrs, options);
             if (sortable && !sort && existing.hasChanged(sortAttr)) sort = true;
+<<<<<<< HEAD
 >>>>>>> added bower and npm components
+=======
+>>>>>>> be0719434b9ea99c3f6ad931bbb0e6a156ff12a0
+>>>>>>> feat/search
           }
           models[i] = existing;
 
@@ -1028,7 +1096,11 @@
       if (remove) {
         for (var i = 0; i < this.length; i++) {
           if (!modelMap[(model = this.models[i]).cid]) toRemove.push(model);
+<<<<<<< HEAD
 >>>>>>> added bower and npm components
+=======
+>>>>>>> be0719434b9ea99c3f6ad931bbb0e6a156ff12a0
+>>>>>>> feat/search
         }
         if (toRemove.length) this._removeModels(toRemove, options);
       }
@@ -1063,7 +1135,11 @@
             this.models.push(orderedModels[i]);
           }
         }
+<<<<<<< HEAD
 >>>>>>> added bower and npm components
+=======
+>>>>>>> be0719434b9ea99c3f6ad931bbb0e6a156ff12a0
+>>>>>>> feat/search
       }
 
       // Silently sort the collection if appropriate.
@@ -1081,7 +1157,11 @@
         for (var i = 0; i < toAdd.length; i++) {
           if (at != null) addOpts.index = at + i;
           (model = toAdd[i]).trigger('add', model, this, addOpts);
+<<<<<<< HEAD
 >>>>>>> added bower and npm components
+=======
+>>>>>>> be0719434b9ea99c3f6ad931bbb0e6a156ff12a0
+>>>>>>> feat/search
         }
         if (sort || orderChanged) this.trigger('sort', this, options);
         if (toAdd.length || toRemove.length) this.trigger('update', this, options);
@@ -1157,7 +1237,11 @@
       return this[first ? 'find' : 'filter'](function(model) {
         return matches(model.attributes);
       });
+<<<<<<< HEAD
 >>>>>>> added bower and npm components
+=======
+>>>>>>> be0719434b9ea99c3f6ad931bbb0e6a156ff12a0
+>>>>>>> feat/search
     },
 
     // Return the first model with matching attributes. Useful for simple cases
@@ -1195,7 +1279,11 @@
         this.models.sort(_.bind(this.comparator, this));
       }
 
+<<<<<<< HEAD
 >>>>>>> added bower and npm components
+=======
+>>>>>>> be0719434b9ea99c3f6ad931bbb0e6a156ff12a0
+>>>>>>> feat/search
       if (!options.silent) this.trigger('sort', this, options);
       return this;
     },
@@ -1287,7 +1375,11 @@
 <<<<<<< HEAD
 =======
     // Returns removed models, or false if nothing is removed.
+<<<<<<< HEAD
 >>>>>>> added bower and npm components
+=======
+>>>>>>> be0719434b9ea99c3f6ad931bbb0e6a156ff12a0
+>>>>>>> feat/search
     _removeModels: function(models, options) {
       var removed = [];
       for (var i = 0; i < models.length; i++) {
@@ -1370,7 +1462,11 @@
       head: 3, take: 3, initial: 3, rest: 3, tail: 3, drop: 3, last: 3,
       without: 0, difference: 0, indexOf: 3, shuffle: 1, lastIndexOf: 3,
       isEmpty: 1, chain: 1, sample: 3, partition: 3 };
+<<<<<<< HEAD
 >>>>>>> added bower and npm components
+=======
+>>>>>>> be0719434b9ea99c3f6ad931bbb0e6a156ff12a0
+>>>>>>> feat/search
 
   // Mix in each Underscore method as a proxy to `Collection#models`.
   addUnderscoreMethods(Collection, collectionMethods, 'models');
@@ -1391,7 +1487,11 @@
     };
   });
 
+<<<<<<< HEAD
 >>>>>>> added bower and npm components
+=======
+>>>>>>> be0719434b9ea99c3f6ad931bbb0e6a156ff12a0
+>>>>>>> feat/search
   // Backbone.View
   // -------------
 
@@ -1419,7 +1519,11 @@
   // List of view options to be set as properties.
 =======
   // List of view options to be merged as properties.
+<<<<<<< HEAD
 >>>>>>> added bower and npm components
+=======
+>>>>>>> be0719434b9ea99c3f6ad931bbb0e6a156ff12a0
+>>>>>>> feat/search
   var viewOptions = ['model', 'collection', 'el', 'id', 'attributes', 'className', 'tagName', 'events'];
 
   // Set up all inheritable **Backbone.View** properties and methods.
@@ -1767,7 +1871,11 @@
     this.checkUrl = _.bind(this.checkUrl, this);
 =======
     _.bindAll(this, 'checkUrl');
+<<<<<<< HEAD
 >>>>>>> added bower and npm components
+=======
+>>>>>>> be0719434b9ea99c3f6ad931bbb0e6a156ff12a0
+>>>>>>> feat/search
 
     // Ensure that `History` can be used outside of the browser.
     if (typeof window !== 'undefined') {
@@ -1864,7 +1972,11 @@
       this._hasHashChange   = 'onhashchange' in window && (document.documentMode === void 0 || document.documentMode > 7);
 =======
       this._hasHashChange   = 'onhashchange' in window;
+<<<<<<< HEAD
 >>>>>>> added bower and npm components
+=======
+>>>>>>> be0719434b9ea99c3f6ad931bbb0e6a156ff12a0
+>>>>>>> feat/search
       this._useHashChange   = this._wantsHashChange && this._hasHashChange;
       this._wantsPushState  = !!this.options.pushState;
       this._hasPushState    = !!(this.history && this.history.pushState);
@@ -1987,7 +2099,11 @@
       return _.some(this.handlers, function(handler) {
 =======
       return _.any(this.handlers, function(handler) {
+<<<<<<< HEAD
 >>>>>>> added bower and npm components
+=======
+>>>>>>> be0719434b9ea99c3f6ad931bbb0e6a156ff12a0
+>>>>>>> feat/search
         if (handler.route.test(fragment)) {
           handler.callback(fragment);
           return true;
