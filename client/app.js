@@ -281,7 +281,7 @@ var PlayerView = Backbone.View.extend({
 
   //render the view for the player and get the song from the server
   render: function() {
-    return this.$el.attr('src', this.model ? 'https://trntbl3000.herokuapp.com/' + this.model.get('filename') : '');
+    // return this.$el.attr('src', this.model ? 'https://trntbl3000.herokuapp.com/' + this.model.get('filename') : '');
   }
 
 });
