@@ -62,7 +62,7 @@
         gapi.client.load('trntbl4000', 'v1').then(function() { console.log('loaded'); 
         });
       }
-      var input = $('#youtube').value();
+      var input = document.getElementById('youtube').value();
       function search(input) {
       var request = gapi.client.youtube.search.list({
         part: 'snippet',
