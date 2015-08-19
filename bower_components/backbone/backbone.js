@@ -1,3 +1,4 @@
+
 //     Backbone.js 1.2.2
 
 //     (c) 2010-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
@@ -41,10 +42,17 @@
   var previousBackbone = root.Backbone;
 
   // Create a local reference to a common array method we'll want to use later.
+<<<<<<< HEAD
   var slice = Array.prototype.slice;
 
   // Current version of the library. Keep in sync with `package.json`.
   Backbone.VERSION = '1.2.2';
+=======
+  var slice = [].slice;
+
+  // Current version of the library. Keep in sync with `package.json`.
+  Backbone.VERSION = '1.2.1';
+>>>>>>> be0719434b9ea99c3f6ad931bbb0e6a156ff12a0
 
   // For Backbone's purposes, jQuery, Zepto, Ender, or My Library (kidding) owns
   // the `$` variable.
@@ -68,6 +76,7 @@
   // form param named `model`.
   Backbone.emulateJSON = false;
 
+<<<<<<< HEAD
   // Proxy Backbone class methods to Underscore functions, wrapping the model's
   // `attributes` object or collection's `models` array behind the scenes.
   //
@@ -75,6 +84,10 @@
   // collection.each(this.addView);
   //
   // `Function#apply` can be slow so we use the method's arg count, if we know it.
+=======
+  // Proxy Underscore methods to a Backbone class' prototype using a
+  // particular attribute as the data argument
+>>>>>>> be0719434b9ea99c3f6ad931bbb0e6a156ff12a0
   var addMethod = function(length, method, attribute) {
     switch (length) {
       case 1: return function() {
@@ -84,10 +97,17 @@
         return _[method](this[attribute], value);
       };
       case 3: return function(iteratee, context) {
+<<<<<<< HEAD
         return _[method](this[attribute], cb(iteratee, this), context);
       };
       case 4: return function(iteratee, defaultVal, context) {
         return _[method](this[attribute], cb(iteratee, this), defaultVal, context);
+=======
+        return _[method](this[attribute], iteratee, context);
+      };
+      case 4: return function(iteratee, defaultVal, context) {
+        return _[method](this[attribute], iteratee, defaultVal, context);
+>>>>>>> be0719434b9ea99c3f6ad931bbb0e6a156ff12a0
       };
       default: return function() {
         var args = slice.call(arguments);
@@ -102,6 +122,7 @@
     });
   };
 
+<<<<<<< HEAD
   // Support `collection.sortBy('attr')` and `collection.findWhere({id: 1})`.
   var cb = function(iteratee, instance) {
     if (_.isFunction(iteratee)) return iteratee;
@@ -116,12 +137,19 @@
     };
   };
 
+=======
+>>>>>>> be0719434b9ea99c3f6ad931bbb0e6a156ff12a0
   // Backbone.Events
   // ---------------
 
   // A module that can be mixed in to *any object* in order to provide it with
+<<<<<<< HEAD
   // a custom event channel. You may bind a callback to an event with `on` or
   // remove with `off`; `trigger`-ing an event fires all callbacks in
+=======
+  // custom events. You may bind with `on` or remove with `off` callback
+  // functions to an event; `trigger`-ing an event fires all callbacks in
+>>>>>>> be0719434b9ea99c3f6ad931bbb0e6a156ff12a0
   // succession.
   //
   //     var object = {};
@@ -136,13 +164,21 @@
 
   // Iterates over the standard `event, callback` (as well as the fancy multiple
   // space-separated events `"change blur", callback` and jQuery-style event
+<<<<<<< HEAD
   // maps `{event: callback}`).
   var eventsApi = function(iteratee, events, name, callback, opts) {
+=======
+  // maps `{event: callback}`), reducing them by manipulating `memo`.
+  // Passes a normalized single event name and callback, as well as any
+  // optional `opts`.
+  var eventsApi = function(iteratee, memo, name, callback, opts) {
+>>>>>>> be0719434b9ea99c3f6ad931bbb0e6a156ff12a0
     var i = 0, names;
     if (name && typeof name === 'object') {
       // Handle event maps.
       if (callback !== void 0 && 'context' in opts && opts.context === void 0) opts.context = callback;
       for (names = _.keys(name); i < names.length ; i++) {
+<<<<<<< HEAD
         events = eventsApi(iteratee, events, names[i], name[names[i]], opts);
       }
     } else if (name && eventSplitter.test(name)) {
@@ -155,6 +191,19 @@
       events = iteratee(events, name, callback, opts);
     }
     return events;
+=======
+        memo = iteratee(memo, names[i], name[names[i]], opts);
+      }
+    } else if (name && eventSplitter.test(name)) {
+      // Handle space separated event names.
+      for (names = name.split(eventSplitter); i < names.length; i++) {
+        memo = iteratee(memo, names[i], callback, opts);
+      }
+    } else {
+      memo = iteratee(memo, name, callback, opts);
+    }
+    return memo;
+>>>>>>> be0719434b9ea99c3f6ad931bbb0e6a156ff12a0
   };
 
   // Bind an event to a `callback` function. Passing `"all"` will bind
@@ -163,7 +212,12 @@
     return internalOn(this, name, callback, context);
   };
 
+<<<<<<< HEAD
   // Guard the `listening` argument from the public API.
+=======
+  // An internal use `on` function, used to guard the `listening` argument from
+  // the public API.
+>>>>>>> be0719434b9ea99c3f6ad931bbb0e6a156ff12a0
   var internalOn = function(obj, name, callback, context, listening) {
     obj._events = eventsApi(onApi, obj._events || {}, name, callback, {
         context: context,
@@ -180,8 +234,12 @@
   };
 
   // Inversion-of-control versions of `on`. Tell *this* object to listen to
+<<<<<<< HEAD
   // an event in another object... keeping track of what it's listening to
   // for easier unbinding later.
+=======
+  // an event in another object... keeping track of what it's listening to.
+>>>>>>> be0719434b9ea99c3f6ad931bbb0e6a156ff12a0
   Events.listenTo =  function(obj, name, callback) {
     if (!obj) return this;
     var id = obj._listenId || (obj._listenId = _.uniqueId('l'));
@@ -249,6 +307,10 @@
 
   // The reducing API that removes a callback from the `events` object.
   var offApi = function(events, name, callback, options) {
+<<<<<<< HEAD
+=======
+    // No events to consider.
+>>>>>>> be0719434b9ea99c3f6ad931bbb0e6a156ff12a0
     if (!events) return;
 
     var i = 0, listening;
@@ -303,9 +365,15 @@
   };
 
   // Bind an event to only be triggered a single time. After the first time
+<<<<<<< HEAD
   // the callback is invoked, its listener will be removed. If multiple events
   // are passed in using the space-separated syntax, the handler will fire
   // once for each event, not once for a combination of all events.
+=======
+  // the callback is invoked, it will be removed. When multiple events are
+  // passed in using the space-separated syntax, the event will fire once for every
+  // event you passed in, not once for a combination of all events
+>>>>>>> be0719434b9ea99c3f6ad931bbb0e6a156ff12a0
   Events.once =  function(name, callback, context) {
     // Map the event into a `{event: once}` object.
     var events = eventsApi(onceMap, {}, name, callback, _.bind(this.off, this));
@@ -493,6 +561,12 @@
       var changed = this.changed;
       var prev    = this._previousAttributes;
 
+<<<<<<< HEAD
+=======
+      // Check for changes of `id`.
+      if (this.idAttribute in attrs) this.id = attrs[this.idAttribute];
+
+>>>>>>> be0719434b9ea99c3f6ad931bbb0e6a156ff12a0
       // For each `set` attribute, update or delete the current value.
       for (var attr in attrs) {
         val = attrs[attr];
@@ -505,9 +579,12 @@
         unset ? delete current[attr] : current[attr] = val;
       }
 
+<<<<<<< HEAD
       // Update the `id`.
       this.id = this.get(this.idAttribute);
 
+=======
+>>>>>>> be0719434b9ea99c3f6ad931bbb0e6a156ff12a0
       // Trigger all relevant attribute changes.
       if (!silent) {
         if (changes.length) this._pending = options;
@@ -730,8 +807,12 @@
 
   });
 
+<<<<<<< HEAD
   // Underscore methods that we want to implement on the Model, mapped to the
   // number of arguments they take.
+=======
+  // Underscore methods that we want to implement on the Model.
+>>>>>>> be0719434b9ea99c3f6ad931bbb0e6a156ff12a0
   var modelMethods = { keys: 1, values: 1, pairs: 1, invert: 1, pick: 0,
       omit: 0, chain: 1, isEmpty: 1 };
 
@@ -764,6 +845,7 @@
   var setOptions = {add: true, remove: true, merge: true};
   var addOptions = {add: true, remove: false};
 
+<<<<<<< HEAD
   // Splices `insert` into `array` at index `at`.
   var splice = function(array, insert, at) {
     var tail = Array(array.length - at);
@@ -773,6 +855,8 @@
     for (i = 0; i < tail.length; i++) array[i + length + at] = tail[i];
   };
 
+=======
+>>>>>>> be0719434b9ea99c3f6ad931bbb0e6a156ff12a0
   // Define the Collection's inheritable methods.
   _.extend(Collection.prototype, Events, {
 
@@ -795,9 +879,13 @@
       return Backbone.sync.apply(this, arguments);
     },
 
+<<<<<<< HEAD
     // Add a model, or list of models to the set. `models` may be Backbone
     // Models or raw JavaScript objects to be converted to Models, or any
     // combination of the two.
+=======
+    // Add a model, or list of models to the set.
+>>>>>>> be0719434b9ea99c3f6ad931bbb0e6a156ff12a0
     add: function(models, options) {
       return this.set(models, _.extend({merge: false}, options, addOptions));
     },
@@ -817,6 +905,7 @@
     // already exist in the collection, as necessary. Similar to **Model#set**,
     // the core operation for updating the data contained by the collection.
     set: function(models, options) {
+<<<<<<< HEAD
       if (models == null) return;
 
       options = _.defaults({}, options, setOptions);
@@ -861,11 +950,43 @@
           if (!modelMap[existing.cid]) {
             modelMap[existing.cid] = true;
             set.push(existing);
+=======
+      options = _.defaults({}, options, setOptions);
+      if (options.parse && !this._isModel(models)) models = this.parse(models, options);
+      var singular = !_.isArray(models);
+      models = singular ? (models ? [models] : []) : models.slice();
+      var id, model, attrs, existing, sort;
+      var at = options.at;
+      if (at != null) at = +at;
+      if (at < 0) at += this.length + 1;
+      var sortable = this.comparator && (at == null) && options.sort !== false;
+      var sortAttr = _.isString(this.comparator) ? this.comparator : null;
+      var toAdd = [], toRemove = [], modelMap = {};
+      var add = options.add, merge = options.merge, remove = options.remove;
+      var order = !sortable && add && remove ? [] : false;
+      var orderChanged = false;
+
+      // Turn bare objects into model references, and prevent invalid models
+      // from being added.
+      for (var i = 0; i < models.length; i++) {
+        attrs = models[i];
+
+        // If a duplicate is found, prevent it from being added and
+        // optionally merge it into the existing model.
+        if (existing = this.get(attrs)) {
+          if (remove) modelMap[existing.cid] = true;
+          if (merge && attrs !== existing) {
+            attrs = this._isModel(attrs) ? attrs.attributes : attrs;
+            if (options.parse) attrs = existing.parse(attrs, options);
+            existing.set(attrs, options);
+            if (sortable && !sort && existing.hasChanged(sortAttr)) sort = true;
+>>>>>>> be0719434b9ea99c3f6ad931bbb0e6a156ff12a0
           }
           models[i] = existing;
 
         // If this is a new, valid model, push it to the `toAdd` list.
         } else if (add) {
+<<<<<<< HEAD
           model = models[i] = this._prepareModel(model, options);
           if (model) {
             toAdd.push(model);
@@ -881,11 +1002,38 @@
         for (i = 0; i < this.length; i++) {
           model = this.models[i];
           if (!modelMap[model.cid]) toRemove.push(model);
+=======
+          model = models[i] = this._prepareModel(attrs, options);
+          if (!model) continue;
+          toAdd.push(model);
+          this._addReference(model, options);
+        }
+
+        // Do not add multiple models with the same `id`.
+        model = existing || model;
+        if (!model) continue;
+        id = this.modelId(model.attributes);
+        if (order && (model.isNew() || !modelMap[id])) {
+          order.push(model);
+
+          // Check to see if this is actually a new model at this index.
+          orderChanged = orderChanged || !this.models[i] || model.cid !== this.models[i].cid;
+        }
+
+        modelMap[id] = true;
+      }
+
+      // Remove nonexistent models if appropriate.
+      if (remove) {
+        for (var i = 0; i < this.length; i++) {
+          if (!modelMap[(model = this.models[i]).cid]) toRemove.push(model);
+>>>>>>> be0719434b9ea99c3f6ad931bbb0e6a156ff12a0
         }
         if (toRemove.length) this._removeModels(toRemove, options);
       }
 
       // See if sorting is needed, update `length` and splice in new models.
+<<<<<<< HEAD
       var orderChanged = false;
       var replace = !sortable && add && remove;
       if (set.length && replace) {
@@ -899,6 +1047,22 @@
         if (sortable) sort = true;
         splice(this.models, toAdd, at == null ? this.length : at);
         this.length = this.models.length;
+=======
+      if (toAdd.length || orderChanged) {
+        if (sortable) sort = true;
+        this.length += toAdd.length;
+        if (at != null) {
+          for (var i = 0; i < toAdd.length; i++) {
+            this.models.splice(at + i, 0, toAdd[i]);
+          }
+        } else {
+          if (order) this.models.length = 0;
+          var orderedModels = order || toAdd;
+          for (var i = 0; i < orderedModels.length; i++) {
+            this.models.push(orderedModels[i]);
+          }
+        }
+>>>>>>> be0719434b9ea99c3f6ad931bbb0e6a156ff12a0
       }
 
       // Silently sort the collection if appropriate.
@@ -906,10 +1070,17 @@
 
       // Unless silenced, it's time to fire all appropriate add/sort events.
       if (!options.silent) {
+<<<<<<< HEAD
         for (i = 0; i < toAdd.length; i++) {
           if (at != null) options.index = at + i;
           model = toAdd[i];
           model.trigger('add', model, this, options);
+=======
+        var addOpts = at != null ? _.clone(options) : options;
+        for (var i = 0; i < toAdd.length; i++) {
+          if (at != null) addOpts.index = at + i;
+          (model = toAdd[i]).trigger('add', model, this, addOpts);
+>>>>>>> be0719434b9ea99c3f6ad931bbb0e6a156ff12a0
         }
         if (sort || orderChanged) this.trigger('sort', this, options);
         if (toAdd.length || toRemove.length) this.trigger('update', this, options);
@@ -978,7 +1149,14 @@
     // Return models with matching attributes. Useful for simple cases of
     // `filter`.
     where: function(attrs, first) {
+<<<<<<< HEAD
       return this[first ? 'find' : 'filter'](attrs);
+=======
+      var matches = _.matches(attrs);
+      return this[first ? 'find' : 'filter'](function(model) {
+        return matches(model.attributes);
+      });
+>>>>>>> be0719434b9ea99c3f6ad931bbb0e6a156ff12a0
     },
 
     // Return the first model with matching attributes. Useful for simple cases
@@ -991,6 +1169,7 @@
     // normal circumstances, as the set will maintain sort order as each item
     // is added.
     sort: function(options) {
+<<<<<<< HEAD
       var comparator = this.comparator;
       if (!comparator) throw new Error('Cannot sort a set without a comparator');
       options || (options = {});
@@ -1004,6 +1183,18 @@
       } else {
         this.models.sort(comparator);
       }
+=======
+      if (!this.comparator) throw new Error('Cannot sort a set without a comparator');
+      options || (options = {});
+
+      // Run sort based on type of `comparator`.
+      if (_.isString(this.comparator) || this.comparator.length === 1) {
+        this.models = this.sortBy(this.comparator, this);
+      } else {
+        this.models.sort(_.bind(this.comparator, this));
+      }
+
+>>>>>>> be0719434b9ea99c3f6ad931bbb0e6a156ff12a0
       if (!options.silent) this.trigger('sort', this, options);
       return this;
     },
@@ -1092,6 +1283,10 @@
     },
 
     // Internal method called by both remove and set.
+<<<<<<< HEAD
+=======
+    // Returns removed models, or false if nothing is removed.
+>>>>>>> be0719434b9ea99c3f6ad931bbb0e6a156ff12a0
     _removeModels: function(models, options) {
       var removed = [];
       for (var i = 0; i < models.length; i++) {
@@ -1161,16 +1356,41 @@
   // right here:
   var collectionMethods = { forEach: 3, each: 3, map: 3, collect: 3, reduce: 4,
       foldl: 4, inject: 4, reduceRight: 4, foldr: 4, find: 3, detect: 3, filter: 3,
+<<<<<<< HEAD
       select: 3, reject: 3, every: 3, all: 3, some: 3, any: 3, include: 3, includes: 3,
       contains: 3, invoke: 0, max: 3, min: 3, toArray: 1, size: 1, first: 3,
       head: 3, take: 3, initial: 3, rest: 3, tail: 3, drop: 3, last: 3,
       without: 0, difference: 0, indexOf: 3, shuffle: 1, lastIndexOf: 3,
       isEmpty: 1, chain: 1, sample: 3, partition: 3, groupBy: 3, countBy: 3,
       sortBy: 3, indexBy: 3};
+=======
+      select: 3, reject: 3, every: 3, all: 3, some: 3, any: 3, include: 2,
+      contains: 2, invoke: 0, max: 3, min: 3, toArray: 1, size: 1, first: 3,
+      head: 3, take: 3, initial: 3, rest: 3, tail: 3, drop: 3, last: 3,
+      without: 0, difference: 0, indexOf: 3, shuffle: 1, lastIndexOf: 3,
+      isEmpty: 1, chain: 1, sample: 3, partition: 3 };
+>>>>>>> be0719434b9ea99c3f6ad931bbb0e6a156ff12a0
 
   // Mix in each Underscore method as a proxy to `Collection#models`.
   addUnderscoreMethods(Collection, collectionMethods, 'models');
 
+<<<<<<< HEAD
+=======
+  // Underscore methods that take a property name as an argument.
+  var attributeMethods = ['groupBy', 'countBy', 'sortBy', 'indexBy'];
+
+  // Use attributes instead of properties.
+  _.each(attributeMethods, function(method) {
+    if (!_[method]) return;
+    Collection.prototype[method] = function(value, context) {
+      var iterator = _.isFunction(value) ? value : function(model) {
+        return model.get(value);
+      };
+      return _[method](this.models, iterator, context);
+    };
+  });
+
+>>>>>>> be0719434b9ea99c3f6ad931bbb0e6a156ff12a0
   // Backbone.View
   // -------------
 
@@ -1194,7 +1414,11 @@
   // Cached regex to split keys for `delegate`.
   var delegateEventSplitter = /^(\S+)\s*(.*)$/;
 
+<<<<<<< HEAD
   // List of view options to be set as properties.
+=======
+  // List of view options to be merged as properties.
+>>>>>>> be0719434b9ea99c3f6ad931bbb0e6a156ff12a0
   var viewOptions = ['model', 'collection', 'el', 'id', 'attributes', 'className', 'tagName', 'events'];
 
   // Set up all inheritable **Backbone.View** properties and methods.
@@ -1538,7 +1762,11 @@
   // falls back to polling.
   var History = Backbone.History = function() {
     this.handlers = [];
+<<<<<<< HEAD
     this.checkUrl = _.bind(this.checkUrl, this);
+=======
+    _.bindAll(this, 'checkUrl');
+>>>>>>> be0719434b9ea99c3f6ad931bbb0e6a156ff12a0
 
     // Ensure that `History` can be used outside of the browser.
     if (typeof window !== 'undefined') {
@@ -1631,7 +1859,11 @@
       this.options          = _.extend({root: '/'}, this.options, options);
       this.root             = this.options.root;
       this._wantsHashChange = this.options.hashChange !== false;
+<<<<<<< HEAD
       this._hasHashChange   = 'onhashchange' in window && (document.documentMode === void 0 || document.documentMode > 7);
+=======
+      this._hasHashChange   = 'onhashchange' in window;
+>>>>>>> be0719434b9ea99c3f6ad931bbb0e6a156ff12a0
       this._useHashChange   = this._wantsHashChange && this._hasHashChange;
       this._wantsPushState  = !!this.options.pushState;
       this._hasPushState    = !!(this.history && this.history.pushState);
@@ -1750,7 +1982,11 @@
       // If the root doesn't match, no routes can match either.
       if (!this.matchRoot()) return false;
       fragment = this.fragment = this.getFragment(fragment);
+<<<<<<< HEAD
       return _.some(this.handlers, function(handler) {
+=======
+      return _.any(this.handlers, function(handler) {
+>>>>>>> be0719434b9ea99c3f6ad931bbb0e6a156ff12a0
         if (handler.route.test(fragment)) {
           handler.callback(fragment);
           return true;
