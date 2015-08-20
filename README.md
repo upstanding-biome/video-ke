@@ -1,8 +1,8 @@
 # trntbl4000
-updating to version 4000
 
 ## Overview ##
-> TRNTBL3000 is an app to play music. Liven up a party with this simple DIY DJ-app. Use a crossfader in between songs.
+> TRNTBL3000 is an app to play music. Liven up a party with this simple DIY DJ-app.
+  TRNTBL4000 incorporates this need but adds video functionality and the ability to search the Youtube API to add the songs you want to sing or listen to and use a crossfader in between songs.
 
 ## Dependencies ##
 > Assert
@@ -11,13 +11,11 @@ updating to version 4000
 
 > Express.js
 
-> GridFS
-
-> Mongo.db
-
 > Node.js
 
 > Mongoose
+
+> Youtube API v3
 
 ## Tests ##
 > Unit Testing: Mocha, Chai
@@ -50,13 +48,17 @@ frontend testing:
 
 ## Credits ##
 
+Version 2 Development Team:
+
+Product Owner: [Cristian Avalos](https://github.com/cavalos0086/)
+
+Scrum Master: [Kent Ou](https://github.com/kent10ou/)
+
 [Kim Merino](https://github.com/dafabulousteach/)
 
-[Cristian Avalos](https://github.com/cavalos0086/)
-
-[Kent Ou](https://github.com/kent10ou/)
-
 [Christopher Salam](https://github.com/ChristopherSalam/)
+
+Version 1 Development Team:
 
 [Claire Bendersky](https://github.com/cdersky/)
 
@@ -164,17 +166,9 @@ Your pull request is comprised of a single squashed commit.
 
 ## References ##
 
-> https://devcenter.heroku.com/articles/mongolab
-
-> https://docs.mongodb.org/
-
 > https://backbonejs.org/
 
 > https://expressjs.com/
-
-> https://mongoosejs.com/docs/guide.html
-
-> https://mongolab.com/
 
 > https://nodejs.org/
 
