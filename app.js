@@ -53,9 +53,10 @@ app.get('/', function(req, res) {
 //    client retrieves a specific track from the db using the track id     //
 //    see render fn in playerView in client/app.js (around line 214)       //
 //=========================================================================//
-app.get('/song', function(req, res) {
-  retrieve(req.query.id, res);
-});
+
+// app.get('/track', function(req, res) {
+//   retrieve(req.query.id, res);
+// });
 
 //=========================================================================//
 //   Automatically populates the library by querying the db                //
