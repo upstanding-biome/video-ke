@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <title>trntbl4000</title>
   <!-- Latest compiled and minified CSS -->
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js" type="text/javascript"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js" type="text/javascript"></script>
   <link rel="stylesheet" type="text/css" href="styles/style.css">
@@ -15,6 +16,7 @@
   <link href="styles/slider.css" rel="stylesheet">
   <link href="styles/jquery-ui.custom.min.css" rel="stylesheet">
   <link href="styles/app.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -61,6 +63,7 @@
       var search = function(input){
         $('#results').html('')
         var input = $('#searchTxt').val();
+        $('#results').html('');
         gapi.client.request({
           path:'/youtube/v3/search',
           params: {
@@ -117,9 +120,7 @@ $(document).ready(function() {
 <!-- Access the Google JavaScript Library -->
   <script type="text/javascript" src="https://apis.google.com/js/client.js?onload=init"></script>
   <script type="text/javascript" src="https://apis.google.com/js/client.js?onload=OnLoadCallback"></script>
-
-  <script src="lib/underscore-min.js" type="text/javascript"></script>
-  <script src="lib/backbone-min.js" type="text/javascript"></script>
+  
 <!--Slider Specific Stuff-->
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/jquery-ui.custom.min.js"></script>
