@@ -91,6 +91,8 @@ var AppView = Backbone.View.extend({
     //instantiating our turntables and crossfader
     this.playerViewA = new PlayerView($('.playerLeft'));
     this.playerViewB = new PlayerView($('.playerRight'));
+    this.playerViewC = new PlayerView($('.playerLeft'));
+    this.playerViewD = new PlayerView($('.playerRight'));
     this.sliderView = new SliderView($('#sliderContainer'));
 
     //listening for a change to our current song in the corresponding turntable, callback will be invoked when the change event is fired
@@ -251,20 +253,26 @@ var QueueCollectionView = Backbone.View.extend({
 //create a view class for our turntables, which is instantiated in 'AppView'
 var PlayerView = Backbone.View.extend({
   //create a new audio element with controls
-
-  el: '<iframe class="mvideo" width="400" height="300" src="https://www.youtube.com/embed/y6y_4_b6RS8?autoplay=0&enablejsapi=1"></iframe><br><iframe height="300" src="https://www.youtube.com/embed/c7KnhKy_yeo?autoplay=0&enablejsapi=1" width="400"></iframe>',
-
-  el: '<iframe width="420" height="315" src="http://www.youtube.com/embed/XGSy3_Czz8k?autoplay=0"></iframe>',
-
-
+  // el: '<iframe class="mvideo" width="500" height="350" src="https://www.youtube.com/embed/y6y_4_b6RS8?autoplay=0&enablejsapi=1">',
+  // el: '<iframe id="ytplayer1" width="500" height="300">',
+  el: '<div id="ytplayer1"></div>',
+// <div id="ytplayer1" align='left'></div> from kent....
+// <div id="ytplayer2" align='right'></div>
+  // el: '<iframe class="mvideo" width="400" height="300" src="https://www.youtube.com/embed/y6y_4_b6RS8?autoplay=1&enablejsapi=1"></iframe><br><iframe height="300" src="https://www.youtube.com/embed/c7KnhKy_yeo?autoplay=1&enablejsapi=1" width="400"></iframe>',
   //callback is invoked when 'ended' is fired (when song is done playing)
   initialize: function(container) {
+
+    // console.log();
+
+    this.$el[0].id = 'ytplayer'+ String(Number(this.cid.match(/\d+/))-6);
+
     this.$el.on('ended', function() {
       this.trigger('ended', this.model);
     }.bind(this));
 
     //clear song out of player
     container.append(this.$el);
+
     this.render();
   },
 
@@ -334,7 +342,7 @@ $(document).ready(function() {
   ////////////////////////////////////////////////////////////////////////////////
 
   //instantiating a new view for our library
-  var libraryView = new LibraryCollectionView($('#libraryView'), library, appModel.get('queueA'), appModel.get('queueB'));
+  // var libraryView = new LibraryCollectionView($('#libraryView'), library, appModel.get('queueA'), appModel.get('queueB'));
 
   //instantiating our queue collections
   var queueViewA = new QueueCollectionView($('#queueViewA'), appModel.get('queueA'));
@@ -345,4 +353,9 @@ $(document).ready(function() {
   var appView = new AppView({
     model: appModel
   });
+
+  ////////////////////////////////////////////////////////////////////////////////
+  //                                                           YOUTUBE COMMANDS //
+  ////////////////////////////////////////////////////////////////////////////////
+
 });

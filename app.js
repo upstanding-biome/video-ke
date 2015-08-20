@@ -10,7 +10,7 @@ var retrieve = require('./reqHandler.js').retrieve;
 //========================================================//
 //   Sets port to environment port or local port          //
 //========================================================//
-var port = process.env.PORT || '3000';
+var port = process.env.PORT || '4000';
 
 //========================================================//
 //   connecting the client and server                     //
@@ -77,5 +77,5 @@ app.get('/songs', function(req, res) {
 //========================================================//
 var server = app.listen(port, function() {
   var host = server.address().address;
-  console.log('Example app listening at http://%s:%s -- %s', host, port);
+  console.log('Example app listening at', host, port);
 });
