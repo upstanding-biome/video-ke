@@ -53,7 +53,7 @@ app.get('/', function(req, res) {
 //    client retrieves a specific track from the db using the track id     //
 //    see render fn in playerView in client/app.js (around line 214)       //
 //=========================================================================//
-app.get('/track', function(req, res) {
+app.get('/song', function(req, res) {
   retrieve(req.query.id, res);
 });
 
@@ -62,15 +62,15 @@ app.get('/track', function(req, res) {
 //   Library is defined in dbconnection, around line 13                    //
 //   see url in LibraryCollection in client/app.js (around line 49)        //
 //=========================================================================//
-app.get('/songs', function(req, res) {
-  Library(function(err, data) {
-    if (err) {
-      throw err;
-    } else {
-      res.send(data);
-    }
-  });
-});
+// app.get('/songs', function(req, res) {
+//   Library(function(err, data) {
+//     if (err) {
+//       throw err;
+//     } else {
+//       res.send(data);
+//     }
+//   });
+// });
 
 //========================================================//
 //   Calling the server                                   //

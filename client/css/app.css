@@ -1,0 +1,133 @@
+
+/*generel*/
+body{
+  margin:0;
+  padding:0;
+  font-family:'PT Sans';
+  background:#666;
+  color:#ccc;
+}
+
+h1, h2, h3, h4, h5, h6 {
+/*  color: #ccc;*/
+/*  font-family:'PT Sans';*/
+}
+
+a, a:visited { color: #666; text-decoration: none; outline: 0; }
+a:hover, a:focus { color: #ccc; text-decoration: none; }
+p a, p a:visited { line-height: inherit; }
+
+/*bootstrap overrides*/
+.container-fluid{
+  text-align: center;
+}
+
+/*player*/
+.player{
+  padding:10px;
+  background-color: transparent;
+}
+
+.player.active{
+  background-color:#888;
+}
+
+/*mixer*/
+h2{
+  margin-top:20px;
+}
+
+.slider.slider-horizontal .slider-handle.triangle {
+  border-bottom-color: #cc181e;
+  border-width: 0 29px 30px;
+  top:-11px;
+  margin-left:-30px;
+}
+
+.slider-selection {
+  background-color: #aaa;
+  background-image: linear-gradient(to bottom, #aaa, #999);
+}
+
+.slider-track {
+  background-color: #aaa;
+  background-image: linear-gradient(to bottom, #999, #aaa);
+}
+
+#volume-slider-state{
+  margin-top:10px;
+}
+
+/*search*/
+.record{
+  position: relative;
+  text-align: left;
+  cursor:pointer;
+  margin: 10px 0;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.record:hover{
+  background-color:#888;
+}
+
+.record .thumbnail{
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  margin:0;
+}
+
+.record .duration{
+  padding:0 4px;
+  position:absolute;
+  bottom:0px;
+  right:0px;
+  background-color:#666;
+  border-top-left-radius: 3px;
+
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+  filter: alpha(opacity=80);
+  -moz-opacity:0.8;
+  -khtml-opacity: 0.8;
+  opacity: 0.8;
+}
+
+.record h4{
+  color: #fff;
+  font-size:18px;
+}
+
+.search input{
+  width:83.3333%;
+}
+
+.search .search-button-col{
+  text-align: left;
+  padding-left:10px;
+}
+
+.record a{
+  font-size:14px;
+}
+
+.record .links{
+  display: none;
+}
+
+.record:hover .links{
+  display: block;
+  position:absolute;
+  right:5px;
+  bottom:5px;
+  text-align:left;
+  border-radius: 5px;
+  background-color: #aaa;
+  padding:5px;
+}
+
+.record:hover .links a:hover{
+  color:#fff;
+}

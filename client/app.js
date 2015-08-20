@@ -50,7 +50,7 @@ var LibraryCollection = Backbone.Collection.extend({
   model: SongModel,
 
   //where our songs collection exists on the server
-  url: 'https://trntbl3000.herokuapp.com/songs'
+  url: 'http://localhost:4000/songslist.js'
 });
 
 //define a collection class for our queue
@@ -268,7 +268,7 @@ var PlayerView = Backbone.View.extend({
   //callback is invoked when 'ended' is fired (when song is done playing)
   initialize: function(container) {
 
-    this.$el[0].id = 'ytplayer'+ String(Number(this.cid.match(/\d+/))-6);
+    this.$el[0].id = 'ytplayer'+ String(Number(this.cid.match(/\d+/))-7);
 
     this.$el.on('ended', function() {
       this.trigger('ended', this.model);
@@ -346,11 +346,10 @@ $(document).ready(function() {
   ////////////////////////////////////////////////////////////////////////////////
 
   //instantiating a new view for our library
-  // var libraryView = new LibraryCollectionView($('#libraryView'), library, appModel.get('queueA'), appModel.get('queueB'));
+  var libraryView = new LibraryCollectionView($('#libraryView'), library, appModel.get('queueA'), appModel.get('queueB'));
 
   //instantiating our queue collections
   var queueViewA = new QueueCollectionView($('#queueViewA'), appModel.get('queueA'));
-
   var queueViewB = new QueueCollectionView($('#queueViewB'), appModel.get('queueB'));
 
   //instantiate a view for our entire app
