@@ -63,27 +63,34 @@
         <h3>Search YouTube</h3>
       </center>
       <div id="libraryView"></div>
+      <div id="results"></div>
 
       <!-- Captures input and calls YouTube API -->
       <script>
       function init(){
       // THIS API KEY NEEDS TO BE HIDDEN.
         gapi.client.setApiKey('AIzaSyALWVtojqo6Cp-Ag3sIUsasidpZFrAdvto');
-        gapi.client.load('trntbl4000', 'v1').then(function() { console.log('loaded'); 
+        gapi.client.load('youtube','v3').then(function() {  
+          console.log('loaded');
+          gapi.client.request({
+            path:'/youtube/v3/search', 
+            params: {
+              part: 'snippet',
+              q: 'serrucho'
+            }
+          }).then(function(data){
+            $('#results').prepend('<img src="data.result.items[0].snippet.thumbnails.default.url"/></img>');
+          }); 
         });
+        console.log('client was loaded');
+
       }
-      var input = document.getElementById('youtube').value();
-      function search(input) {
-      var request = gapi.client.youtube.search.list({
-        part: 'snippet',
-        q: 'serrucho'
-      });
-    }
-    
-    // // Send the request to the API server,
-    // // and invoke onSearchRepsonse() with the response.
-    //     request.execute(onSearchResponse);
-    //   }
+
+      var input = document.getElementById('youtube');
+      
+      // Use the JavaScript client library to create a search.list() API call
+  
+
       </script>
 
 
@@ -108,8 +115,7 @@
 
 <!-- Access the Google JavaScript Library -->
   <script type="text/javascript" src="https://apis.google.com/js/client.js?onload=init"></script>
-
-
+  <script type="text/javascript" src="https://apis.google.com/js/client.js?onload=OnLoadCallback"></script>"
 
 </body>
 
