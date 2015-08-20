@@ -188,8 +188,12 @@ var LibraryCollectionView = Backbone.View.extend({
   //render the view
   render: function() {
     this.$el.html('');
-
+    this.$el.append('<th></th>');
+    this.$el.append('<th>Title</th>');
     this.$el.append('<input id= "youtube"></input>');
+    this.$el.append('<th>Artist</th>');
+    this.$el.append('<th>Genre</th>');   
+    this.$el.append('<th></th>');
 
 
     this.$el.append('');
@@ -252,9 +256,7 @@ var QueueCollectionView = Backbone.View.extend({
 var PlayerView = Backbone.View.extend({
   //create a new audio element with controls
 
-  el: '<iframe class="mvideo" width="400" height="300" src="https://www.youtube.com/embed/y6y_4_b6RS8?autoplay=0&enablejsapi=1"></iframe><br><iframe height="300" src="https://www.youtube.com/embed/c7KnhKy_yeo?autoplay=0&enablejsapi=1" width="400"></iframe>',
-
-  el: '<iframe width="420" height="315" src="http://www.youtube.com/embed/XGSy3_Czz8k?autoplay=0"></iframe>',
+  // el: '<iframe class="mvideo" width="400" height="300" src="https://www.youtube.com/embed/y6y_4_b6RS8?autoplay=0&enablejsapi=1"></iframe><br><iframe height="300" src="https://www.youtube.com/embed/c7KnhKy_yeo?autoplay=0&enablejsapi=1" width="400"></iframe>',
 
 
   //callback is invoked when 'ended' is fired (when song is done playing)

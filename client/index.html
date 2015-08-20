@@ -63,26 +63,44 @@
         <h3>Search YouTube</h3>
       </center>
       <div id="libraryView"></div>
+      <button id='search' onclick='search()'>Search YouTube</button>
 
       <!-- Captures input and calls YouTube API -->
       <script>
       function init(){
-        gapi.client.setApiKey('AIzaSyALWVtojqo6Cp-Ag3sIUsasidpZFrAdvto');
-        gapi.client.load('trntbl4000', 'v1').then(function() { console.log('loaded'); 
-        });
-      }
       // THIS API KEY NEEDS TO BE HIDDEN.
-    //   var input = $('#youtube');
-    //   function search() {
-    //   // Use the JavaScript client library to create a search.list() API call.
-    //   var request = gapi.client.youtube.search.list({
-    //     part: 'snippet'
-    //   });
-    
-    // // Send the request to the API server,
-    // // and invoke onSearchRepsonse() with the response.
-    //     request.execute(onSearchResponse);
-    //   }
+        gapi.client.setApiKey('AIzaSyALWVtojqo6Cp-Ag3sIUsasidpZFrAdvto');
+        gapi.client.load('youtube','v3').then(function() {  
+          console.log('loaded');
+          gapi.client.request({
+            path:'/youtube/v3/search', 
+            params: {
+              part: 'snippet',
+              q: 'serrucho'
+            }
+          }).then(function(data){
+            console.log(data);
+          }); 
+        });
+        console.log('client was loaded');
+
+      }
+      var input = document.getElementById('youtube');
+      
+      // Use the JavaScript client library to create a search.list() API call.
+
+      // Search for a specified string.
+      // function search() {
+        
+      // }
+      // function showResponse(response) {
+      //   var responseString = JSON.stringify(response, '', 2);
+      //   document.getElementById('youtube').innerHTML += responseString;
+      // }
+      // function onSearchResponse(response) {
+      //   showResponse(response);
+      // }
+  
       </script>
 
 
@@ -107,8 +125,7 @@
 
 <!-- Access the Google JavaScript Library -->
   <script type="text/javascript" src="https://apis.google.com/js/client.js?onload=init"></script>
-
-
+  <script type="text/javascript" src="https://apis.google.com/js/client.js?onload=OnLoadCallback"></script>"
 
 </body>
 
