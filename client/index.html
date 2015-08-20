@@ -106,6 +106,7 @@
       }
 
       var search = function(e){
+        $('#results').html('')
         var input = $('#searchTxt').val();
 
         gapi.client.request({
@@ -126,6 +127,7 @@
             $('#results').append('<p>' + items[i].snippet.description + '</p>');
             };
           });
+        $('#searchTxt').val('')
       };
 
       </script>
