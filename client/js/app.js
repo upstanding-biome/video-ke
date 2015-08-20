@@ -5,12 +5,12 @@ jQuery(function($){
       $('<script/>').attr('src', "http://www.youtube.com/player_api"));
 
   //init search result links
-  $(document).on('click', 'a.add-to-player', function(e){
-    e.preventDefault();
-    e.stopPropagation();
-    var player = ($(this).attr('href').indexOf('player1') > -1) ? App.player1 : App.player2;
-    player.play($(this).data('id'));
-  });
+  // $(document).on('click', 'a.add-to-player', function(e){
+  //   e.preventDefault();
+  //   e.stopPropagation();
+  //   var player = ($(this).attr('href').indexOf('player1') > -1) ? App.player1 : App.player2;
+  //   player.play($(this).data('id'));
+  // });
 });
 
 //triggered after http://www.youtube.com/player_api loaded
@@ -50,19 +50,19 @@ var App = {
     App.player2.volume(volume_player_2);
   },
 
-  search: function(query, callback){
-    YTHelper.search(YTHelper.SEARCH_TYPE_VIDEO, query, function(data){
-      data.results = [];
+  // search: function(query, callback){
+  //   YTHelper.search(YTHelper.SEARCH_TYPE_VIDEO, query, function(data){
+  //     data.results = [];
 
-      if(!data.feed.entry){
-        return callback(data);
-      }
+  //     if(!data.feed.entry){
+  //       return callback(data);
+  //     }
 
-      for(var i =0; i < data.feed.entry.length; i++ ){
-        data.results.push(new YTHelper.YTRecord(data.feed.entry[i]));
-      }
+  //     for(var i =0; i < data.feed.entry.length; i++ ){
+  //       data.results.push(new YTHelper.YTRecord(data.feed.entry[i]));
+  //     }
 
-      callback(data);
-    });
-  }
+  //     callback(data);
+  //   });
+  // }
 };
