@@ -6,6 +6,7 @@
   <title>trntbl4000</title>
 
   <!-- Latest compiled and minified CSS -->
+<<<<<<< HEAD
   <script src="lib/jquery-min.js" type="text/javascript"></script>
   <script src="lib/underscore-min.js" type="text/javascript"></script>
   <script src="lib/backbone-min.js" type="text/javascript"></script>
@@ -18,6 +19,21 @@
   <link href="css/jquery-ui.custom.min.css" rel="stylesheet">
   <link href="css/app.css" rel="stylesheet">
 <!--Slider Specific Stuff-->
+=======
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link async href="http://fonts.googleapis.com/css?family=Monoton" data-generated="http://enjoycss.com" rel="stylesheet" type="text/css" />
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="lib/jquery-min.js" type="text/javascript"></script>
+  <script src="lib/underscore-min.js" type="text/javascript"></script>
+  <script src="lib/backbone-min.js" type="text/javascript"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="app.js" type="text/javascript"></script>
+>>>>>>> feat/search
 </head>
 
 <body>
@@ -77,10 +93,16 @@
           console.log('client loaded');
         });
       }
+<<<<<<< HEAD
 
       var search = function(input){
         var input = $('#searchTxt').val();
         $('#results').html('');
+=======
+      
+      var search = function(input){
+        var input = $('#searchTxt').val();
+>>>>>>> feat/search
         gapi.client.request({
           path:'/youtube/v3/search',
           params: {
@@ -93,7 +115,11 @@
           for(var i = 0; i < items.length; i++){
             var url = data.result.items[i].snippet.thumbnails.default.url;
             $('#results').append('<br/>');
+<<<<<<< HEAD
             $('#results').append('<a href="#"><img src="' + url + '"/></a>');
+=======
+            $('#results').append('<a href="#"><img src="' + url + '"/></a>'); 
+>>>>>>> feat/search
             $('#results').append('<p>' + items[i].snippet.title+'</p>');
             $('#results').append('<p>' + items[i].snippet.description + '</p>');
             };
@@ -224,6 +250,7 @@
 <!-- Access the Google JavaScript Library -->
   <script type="text/javascript" src="https://apis.google.com/js/client.js?onload=init"></script>
   <script type="text/javascript" src="https://apis.google.com/js/client.js?onload=OnLoadCallback"></script>
+<<<<<<< HEAD
   
 <!--Slider Specific Stuff-->
     <script type="text/javascript" src="js/jquery.min.js"></script>
@@ -239,5 +266,12 @@
     <script type="text/javascript" src="js/app.js"></script>
 
 <!--Slider Specific Stuff-->
+=======
+
+
+
+
+
+>>>>>>> feat/search
 </body>
 </html>
