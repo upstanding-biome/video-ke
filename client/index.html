@@ -48,6 +48,7 @@
         <h3>Search YouTube</h3>
       </center>
       <div id="libraryView"></div>
+      <input type='text'>Search YouTube</input>
       <div id="results"></div>
 
       <!-- Captures input and calls YouTube API -->
@@ -64,7 +65,7 @@
               q: 'serrucho'
             }
           }).then(function(data){
-            $('#results').prepend('<img src="data.result.items[0].snippet.thumbnails.default.url"/></img>');
+            $('#results').append('<img src="data.result.items[0].snippet.thumbnails.default.url"></img>');
           }); 
         });
         console.log('client was loaded');
