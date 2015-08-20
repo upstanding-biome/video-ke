@@ -8,25 +8,32 @@ var AppPlayer = function(id, config){
   this.id     = id;
 
   var init = function(){
-    self.player = new YT.Player(id, $.extend(config.yt, { events: {
-                                                          'onReady': on_player_ready,
-                                                          'onStateChange': on_state_change
-                                                      }}));
+    self.player = new YT.Player(
+      id,
+      $.extend(
+        config.yt, { 
+          events: {
+            'onReady': on_player_ready,
+            'onStateChange': on_state_change
+          }
+        }
+      )
+    );
     self.search = new AppPlayerSearch(self);
   };
 
-  this.play = function(id){
-    if(self.ready){
-      this.player.loadVideoById(id);
-    }
-    else{
-      alert('player not ready ...maybe its a bug ...or a feature?');
-    }
-  };
+  // this.play = function(id){
+  //   if(self.ready){
+  //     this.player.loadVideoById(id);
+  //   }
+  //   else{
+  //     alert('player not ready ...maybe its a bug ...or a feature?');
+  //   }
+  // };
 
-  this.is_playing = function (){
-    return self.player.getPlayerState() === YT.PlayerState.PLAYING;
-  };
+  // this.is_playing = function (){
+  //   return self.player.getPlayerState() === YT.PlayerState.PLAYING;
+  // };
 
   this.volume = function(level){
     if(level === null)
@@ -59,14 +66,14 @@ var AppPlayer = function(id, config){
   init();
 };
 
-AppPlayer.default_config = {
-  yt: {
-    height: '390',
-    width: '640',
-    playerVars: { }
-  },
-  player:{
-    on_ready: null,
-    on_change: null
-  }
-};
+// AppPlayer.default_config = {
+//   yt: {
+//     height: '390',
+//     width: '640',
+//     playerVars: { }
+//   },
+//   player:{
+//     on_ready: null,
+//     on_change: null
+//   }
+// };
