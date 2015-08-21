@@ -61,10 +61,19 @@
       <!-- Captures input and calls YouTube API -->
       <script>
       function init(){
-      // THIS API KEY NEEDS TO BE HIDDEN.
-        gapi.client.setApiKey('AIzaSyCaWtRVnepCzGglHi5NTooQFm2YvRDyAfU');
-        gapi.client.load('youtube','v3', function(){
-          console.log('client loaded');
+     
+        var key;
+        $.ajax({
+          type: 'GET',
+          url: '/config.json',
+          dataType: "json",
+          success: function(data){
+            key = data.API_KEY;
+            gapi.client.setApiKey(key);
+            gapi.client.load('youtube','v3', function(){
+              console.log('client loaded');
+            });
+          }
         });
       }
       
