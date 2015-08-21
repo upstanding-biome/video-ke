@@ -22,8 +22,7 @@
   <!-- header -->
   <div class="night-hotel">
     <center>
-      <h1 style="font-family:Monoton; color:#fff" id="logo">trntbl4000</h1>
-      <button class="pad" id="airHorn" style="background-image: url('assets/logo.png'); background-size:cover; width: 80px; height: 65px;"></button>
+      <h1 id="airHorn" style="font-family:Monoton; color:#fff" id="logo">trntbl4000</h1>
     </center>
   </div>
     <!-- Captures input and calls YouTube API -->
@@ -72,13 +71,10 @@
   <div class="row">
     <!-- song queue for the left turntable -->
     <div>
-      <center>
-        <h3>Search YouTube</h3>
-      </center>
-        <div id="libraryView"></div>
-        <input type='text' id='searchTxt'></input>
-        <button id = 'searchBtn' onclick='search()'>Search</button>
-        <div id="results"></div>
+      <input type='text' placeholder="Search YouTube" id='searchTxt'></input>
+      <button id = 'searchBtn' onclick='search()'>Search</button>
+      <div id="results">
+    </div>
       <!-- Captures input and calls YouTube API -->
       <script>
       function init(){
