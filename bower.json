@@ -23,8 +23,7 @@
     "jquery": "~2.1.0",
     "underscore": "~1.6.0",
     "chai": "~1.9.1",
-    "mocha": "~1.18.2",
-    "backbone": "~1.2.1"
+    "mocha": "~1.18.2"
   },
   "resolutions": {
     "underscore": ">=1.7.0"
