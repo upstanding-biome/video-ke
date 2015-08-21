@@ -59,7 +59,23 @@
     </div>
       <!-- Captures input and calls YouTube API -->
       <script>
-      function init(){      
+      function init(){
+     
+        var key;
+        $.ajax({
+          type: 'GET',
+          url: '/config.json',
+          dataType: "json",
+          success: function(data){
+            key = data.API_KEY;
+            gapi.client.setApiKey(key);
+            gapi.client.load('youtube','v3', function(){
+              console.log('client loaded');
+            });
+          }
+        });
+      }
+      
       var search = function(input){
         $('#results').html('')
         var input = $('#searchTxt').val();
