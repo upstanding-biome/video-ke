@@ -28,9 +28,8 @@ app.use(function(req, res, next) {
 //   statically serves files from the client directory    //
 //========================================================//
 app.use(express.static('client'));
-app.use(express.static('audio_files'));
+app.use(express.static('api'));
 app.use(express.static('sfx'));
-
 // for more info, see: http://expressjs.com/starter/static-files.html
 
 //========================================================//
@@ -39,6 +38,7 @@ app.use(express.static('sfx'));
 app.get('/', function(req, res) {
   res.location('/client/index.html');
 });
+
 
 //========================================================//
 //   Use this to add many mp3s at once to the library     //
