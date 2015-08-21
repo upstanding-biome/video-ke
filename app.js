@@ -6,12 +6,14 @@ var app = express();
 //========================================================//
 //   Sets port to environment port or local port          //
 //========================================================//
+
 var port = process.env.PORT || '4000';
 
 //========================================================//
 //   connecting the client and server                     //
 //   allows for CORS (cross origin resource sharing)      //
 //========================================================//
+
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -23,6 +25,7 @@ app.use(function(req, res, next) {
 //========================================================//
 //   statically serves files from the client directory    //
 //========================================================//
+
 app.use(express.static('client'));
 app.use(express.static('audio_files'));
 app.use(express.static('sfx'));
@@ -32,6 +35,7 @@ app.use(express.static('sfx'));
 //========================================================//
 //   ROUTES                                               //
 //========================================================//
+
 app.get('/', function(req, res) {
   res.location('/client/index.html');
 });
