@@ -1,11 +1,7 @@
 "use strict";
 
 var express = require('express');
-var dbconnection = require('./dbconnection.js');
-var Library = require('./dbconnection.js').Library;
 var app = express();
-var url = require('./reqHandler.js').url;
-var retrieve = require('./reqHandler.js').retrieve;
 
 //========================================================//
 //   Sets port to environment port or local port          //

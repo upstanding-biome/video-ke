@@ -193,7 +193,7 @@ var LibraryCollectionView = Backbone.View.extend({
     this.$el.append('<th>Title</th>');
     this.$el.append('<input id= "youtube"></input>');
     this.$el.append('<th>Artist</th>');
-    this.$el.append('<th>Genre</th>');   
+    this.$el.append('<th>Genre</th>');
     this.$el.append('<th></th>');
     this.$el.append('');
 
@@ -314,15 +314,6 @@ var SliderView = Backbone.View.extend({
     }.bind(this));
   }
 });
-
-$(document).ready(function() {
-
-  $('#airHorn').click(function() {
-    $("<audio></audio>").attr({
-      src: 'sfx/airHorn_1.mp3',
-      autoplay: 'autoplay'
-    });
-  });
 
   ////////////////////////////////////////////////////////////////////////////////
   //                                                           MODEL INSTANCES  //
