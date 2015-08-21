@@ -51,12 +51,11 @@
       <div class="row">
         <iframe class="col-xs-6 player"
                 id="player1" type="text/html" width="640" height="390"
-                src="http://www.youtube.com/embed/?enablejsapi=1" frameborder="0">
-        </iframe>
+                src="http://www.youtube.com/embed/ftLxvw_eFN0?enablejsapi=1" frameborder="0"></iframe>
+
         <iframe class="col-xs-6 player"
                 id="player2" type="text/html" width="640" height="390"
-                src="http://www.youtube.com/embed/?enablejsapi=1" frameborder="0">
-        </iframe>
+                src="http://www.youtube.com/embed/ftLxvw_eFN0?enablejsapi=1" frameborder="0"></iframe>
       </div>
 
       <div class="col-xs-12">
@@ -102,17 +101,32 @@
             q: input
           }
         }).then(function(data){
+          console.log('DATATATA: ', data)
           var items = data.result.items;
           for(var i = 0; i < items.length; i++){
             var url = data.result.items[i].snippet.thumbnails.default.url;
+            var id = data.result.items[i].id.videoId;
+            console.log('WHAT ID: ', id)
             $('#results').append('<br/>');
 
             $('#results').append('<a href="#"><img src="' + url + '"/></a>');
             $('#results').append('<p>' + items[i].snippet.title+'</p>');
             $('#results').append('<p>' + items[i].snippet.description + '</p>');
+            console.log('<button onclick="makePlayerA(\'' + id + '\')">Deck A</button>')
+            $('#results').append('<button onclick="makePlayerA(\'' + id + '\')">Deck A</button>');
+            $('#results').append('<button onclick="makePlayerB(\'' + id + '\')">Deck B</button>');
             };
           });
-        $('#searchTxt').val('')
+        $('#searchTxt').val('');
+      };
+
+      var makePlayerA = function (idA) {
+        console.log('IDIDIDIDID', idA);
+        $('#player1').attr('src', "http://www.youtube.com/embed/" + idA + "?enablejsapi=1");
+      };
+
+      var makePlayerB = function (idB) {
+        $('#player2').attr('src', "http://www.youtube.com/embed/" + idB + "?enablejsapi=1");
       };
 
       </script>
