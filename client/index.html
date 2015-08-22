@@ -2,8 +2,10 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>trntbl4000</title>
-<!-- CSS and CDN -->
+
+  <title>YT-oke</title>
+  <!-- Latest compiled and minified CSS -->
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js" type="text/javascript"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js" type="text/javascript"></script>
   <link href="styles/style.css" rel="stylesheet" type="text/css" >
@@ -44,12 +46,22 @@
         </div>
         <div id="volume-slider-state" class="col-xs-12">0%</div>
       </div>
-<!--  Search Bar -->
-  <div class="row">
+
+  <div>
+    <!-- song queue for the left turntable -->
+
     <div class="row">
+    <div class="col-xs-3"></div>
+    <div class="col-xs-6">
       <input type='text' class="form-control" placeholder="Search YouTube" id='searchTxt'></input>
       <button id = 'searchBtn' class="btn btn-danger" onclick='search()'>Search</button>
-      <div id="results">
+    </div>
+    <div class="col-xs-3"></div>
+    </div>
+
+
+    <div id="results">
+      
     </div>
 <!-- Captures input and calls YouTube API -->
       <script>
@@ -85,12 +97,12 @@
           for(var i = 0; i < items.length; i++){
             var url = data.result.items[i].snippet.thumbnails.default.url;
             var id = data.result.items[i].id.videoId;
-            $('#results').append('<br/>');
-            $('#results').append('<a href="#"><img src="' + url + '"/></a>');
-            $('#results').append('<p>' + items[i].snippet.title+'</p>');
-            $('#results').append('<p>' + items[i].snippet.description + '</p>');
-            $('#results').append('<button class="loadVid btn btn-danger" onclick="makePlayerA(\'' + id + '\')">Deck A</button>');
-            $('#results').append('<button class="loadVid btn btn-danger" onclick="makePlayerB(\'' + id + '\')">Deck B</button>');
+            $('#results').append('<br/><div class="row padding">');
+            $('#results').append('<div class="col-xs-3"><a href="#"><img src="' + url + '"/></a></div>');
+            $('#results').append('<div class="col-xs-7"><p class="title">' + items[i].snippet.title+'</p><p class="descrip">' + items[i].snippet.description + '</p><button class="loadVid btn btn-danger" onclick="makePlayerA(\'' + id + '\')">Deck A</button><button class="loadVid btn btn-danger" onclick="makePlayerB(\'' + id + '\')">Deck B</button></div></div>');
+            // $('#results').append('<p>' + items[i].snippet.description + '</p>');
+            // $('#results').append('<button class="loadVid btn btn-danger" onclick="makePlayerA(\'' + id + '\')">Deck A</button>');
+            // $('#results').append('<button class="loadVid btn btn-danger" onclick="makePlayerB(\'' + id + '\')">Deck B</button>');
             $('#results').append('<br/>');
             };
           });
