@@ -27,9 +27,6 @@ app.use(function(req, res, next) {
 //========================================================//
 
 app.use(express.static('client'));
-app.use(express.static('audio_files'));
-app.use(express.static('sfx'));
-
 // for more info, see: http://expressjs.com/starter/static-files.html
 
 //========================================================//
