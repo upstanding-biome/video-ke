@@ -87,7 +87,6 @@
             q: input
           }
         }).then(function(data){
-          console.log('DATATATA: ', data)
           var items = data.result.items;
           for(var i = 0; i < items.length; i++){
             var url = data.result.items[i].snippet.thumbnails.default.url;
@@ -98,6 +97,7 @@
             $('#results').append('<p>' + items[i].snippet.description + '</p>');
             $('#results').append('<button onclick="makePlayerA(\'' + id + '\')">Deck A</button>');
             $('#results').append('<button onclick="makePlayerB(\'' + id + '\')">Deck B</button>');
+            $('#results').append('<br/>');
             };
           });
         $('#searchTxt').val('');
@@ -139,17 +139,12 @@ $(document).ready(function() {
 
   
 <!--Slider Specific JS-->
-    <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/jquery-ui.custom.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap-slider.min.js"></script>
+    <script type="text/javascript" src="scripts/jquery.min.js"></script>
+    <script type="text/javascript" src="scripts/jquery-ui.custom.min.js"></script>
+    <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="scripts/bootstrap-slider.min.js"></script>
 
-    <script type="text/javascript" src="js/app-player.js"></script>
-    <script type="text/javascript" src="js/app-player-search.js"></script>
-    <script type="text/javascript" src="js/app-yt-helper.js"></script>
-    <script type="text/javascript" src="js/app-view.js"></script>
-    <script type="text/javascript" src="js/app-volume-slider.js"></script>
-    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="scripts/app.js"></script>
 
 
 <!--Slider Specific Stuff-->
