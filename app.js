@@ -27,6 +27,7 @@ app.use(function(req, res, next) {
 //========================================================//
 
 app.use(express.static('client'));
+// This is where our private API is located
 app.use(express.static('api'));
 
 
