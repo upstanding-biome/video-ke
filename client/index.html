@@ -60,7 +60,6 @@
       <!-- Captures input and calls YouTube API -->
       <script>
       function init(){
-     
         var key;
         $.ajax({
           type: 'GET',
@@ -104,6 +103,7 @@
         $('#searchTxt').val('');
       };
 
+
       var makePlayerA = function (idA) {
         $('#player1').attr('src', "http://www.youtube.com/embed/" + idA + "?enablejsapi=1");
       };
@@ -138,7 +138,7 @@ $(document).ready(function() {
   <script type="text/javascript" src="https://apis.google.com/js/client.js?onload=OnLoadCallback"></script>
 
   
-<!--Slider Specific Stuff-->
+<!--Slider Specific JS-->
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/jquery-ui.custom.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
