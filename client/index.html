@@ -20,10 +20,12 @@
 </head>
 
 <body>
+  <a href="https://github.com/upstanding-biome/YT-oke"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
   <!-- header -->
   <div class="night-hotel">
     <center>
-      <h1 id="airHorn" style="font-family:Monoton; color:#fff" id="logo">trntbl4000</h1>
+      <h1 id="airHorn" style="font-family:Monoton; font-size: 150%; color:#fff" id="logo">YT-OKE</h1>
+      <h5><a href="https://trntbl3000.herokuapp.com/">Inspired by: trntbl3000</a></h5>
     </center>
   </div>
 
@@ -53,8 +55,8 @@
   <div class="row">
     <!-- song queue for the left turntable -->
     <div class="row">
-      <input type='text' placeholder="Search YouTube" id='searchTxt'></input>
-      <button id = 'searchBtn' onclick='search()'>Search</button>
+      <input type='text' class="form-control" placeholder="Search YouTube" id='searchTxt'></input>
+      <button id = 'searchBtn' class="btn btn-danger" onclick='search()'>Search</button>
       <div id="results">
     </div>
       <!-- Captures input and calls YouTube API -->
@@ -95,8 +97,8 @@
             $('#results').append('<a href="#"><img src="' + url + '"/></a>');
             $('#results').append('<p>' + items[i].snippet.title+'</p>');
             $('#results').append('<p>' + items[i].snippet.description + '</p>');
-            $('#results').append('<button onclick="makePlayerA(\'' + id + '\')">Deck A</button>');
-            $('#results').append('<button onclick="makePlayerB(\'' + id + '\')">Deck B</button>');
+            $('#results').append('<button class="loadVid btn btn-danger" onclick="makePlayerA(\'' + id + '\')">Deck A</button>');
+            $('#results').append('<button class="loadVid btn btn-danger" onclick="makePlayerB(\'' + id + '\')">Deck B</button>');
             $('#results').append('<br/>');
             };
           });

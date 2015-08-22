@@ -24,7 +24,13 @@ body {
 }
 #searchTxt {
   color: #000000;
+  width: 50%;
+  
 }
 #searchBtn {
+  color: #000000;
+}
+
+.loadVid {
   color: #000000;
 }
