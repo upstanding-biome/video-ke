@@ -1,5 +1,8 @@
-/*global App, YTHelper, AppView */
-/*global AppPlayerSearch, YT */
+//========================================================//
+//   global App, YTHelper, AppView AppPlayerSearch, YT    //
+//   Slider specific functions are in this file           //
+//   Inspired heavilty from the work of github.monotom    //
+//========================================================//
 
 var AppPlayer = function(id, config){
   config      = $.extend(AppPlayer.default_config, config);
