@@ -1,7 +1,10 @@
-# YL-oke
+# YT-oke
 
 ## Overview ##
->  YK-oke was inspiried by picking up the codebase for TRNTBL3000, an app that allowed crossfading across two playlists. YK-oke incorporates this need but adds video functionality and the ability to search the Youtube API to add the songs you want to sing or listen to and use a crossfader in between songs.
+
+> YT-oke is a Karoake application that obtains videos from Youtube.
+
+> YT-oke was inspiried by picking up the codebase for TRNTBL3000, an app that allowed crossfading across two playlists. YT-oke incorporates this need but adds video functionality and the ability to search the Youtube API to add the songs you want to sing or listen to and use a crossfader in between songs.
 
 ## Dependencies ##
 > Youtube API v3
