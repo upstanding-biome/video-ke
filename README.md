@@ -1,11 +1,14 @@
-# trntbl4000
+# YL-oke
 
 ## Overview ##
-> TRNTBL3000 is an app to play music. Liven up a party with this simple DIY DJ-app.
-  TRNTBL4000 incorporates this need but adds video functionality and the ability to search the Youtube API to add the songs you want to sing or listen to and use a crossfader in between songs.
+>  YK-oke was inspiried by picking up the codebase for TRNTBL3000, an app that allowed crossfading across two playlists. YK-oke incorporates this need but adds video functionality and the ability to search the Youtube API to add the songs you want to sing or listen to and use a crossfader in between songs.
 
 ## Dependencies ##
+> Youtube API v3
+
 > Assert
+
+> JQuery
 
 > Bootstrap
 
@@ -13,29 +16,11 @@
 
 > Node.js
 
-> Mongoose
-
-> Youtube API v3
-
-## Tests ##
-> Unit Testing: Mocha, Chai
-
-> Integration Testing: Sinon, Supertest
-
 ## Getting Started
 
 ### Installation
 Install dependencies `npm install `
-### Running Tests
-
-backend testing:
-`npm test`
-
-frontend testing:
-`spec/index.html`
-
-## Developer Info ##
-> Limited spec tests due to evolving architecture of application
+Other depencendencies are called from CDN
 
 ## Roadmap ##
 > Possible future updates may include the ability to:
@@ -60,13 +45,9 @@ Scrum Master: [Kent Ou](https://github.com/kent10ou/)
 
 Version 1 Development Team:
 
-[Claire Bendersky](https://github.com/cdersky/)
+[Boundless Kitten](https://github.com/boundless-kitten)
 
-[Vy Cu](https://github.com/veeweeherman/)
-
-[Glenn Gonda](https://github.com/alohaglenn/)
-
-[Marc Cristophe](https://github.com/fusupo/)
+Features and styling heavily inspiried by [Monotom](https://github.com/monotom/html-youtube-mixer)
 
 ## How to Contribute ##
 Contributing
@@ -166,12 +147,12 @@ Your pull request is comprised of a single squashed commit.
 
 ## References ##
 
-> https://backbonejs.org/
+> https://jquery.com/
+
+> http://getbootstrap.com/
 
 > https://expressjs.com/
 
 > https://nodejs.org/
-
-> https://www.npmjs.com/package/gridfs-stream
 
 > https://www.npmjs.com/package/assert
