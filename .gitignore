@@ -37,6 +37,8 @@ ehthumbs.db
 Thumbs.db
 /node_modules
 /api
+node_modules
+api
 
 # API Keys #
 ######################
