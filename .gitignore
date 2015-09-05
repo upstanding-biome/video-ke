@@ -45,3 +45,5 @@ api
 # API Keys #
 ######################
 /config.json
+./config.json
+config.json

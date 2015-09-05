@@ -4,6 +4,40 @@
 //   Inspired heavilty from the work of github.monotom    //
 //========================================================//
 
+/*global AppPlayer, YTHelper, AppVolumeSlider */
+
+var App = {
+  bootstrap: function(){
+    App.player1 = new AppPlayer('player1', {player: {on_ready: function(){ App.slider.value(-50) }}}); //App.slider.value(-50);
+    App.player2 = new AppPlayer('player2', {player: {on_ready: function(){ App.slider.value(-50) }}}); //App.slider.value(-50);
+    App.slider  = new AppVolumeSlider('volume-slider');
+  },
+
+  is_ready: function(){
+    return App.player1.ready && App.player2.ready;
+  },
+
+  volume: function(value){
+    if(!App.is_ready()){
+      return ;
+    }
+
+    var volume_player_1, volume_player_2;
+
+    if(value < 0){//means more on player 1
+      volume_player_1 = 100;
+      volume_player_2 = 100 + value;
+    }
+    else{//more on player 2
+      volume_player_1 = 100 - value;
+      volume_player_2 = 100;
+    }
+
+    App.player1.volume(volume_player_1);
+    App.player2.volume(volume_player_2);
+  },
+};
+
 var AppPlayer = function(id, config){
   config      = $.extend(AppPlayer.default_config, config);
   var self    = this;
@@ -47,13 +81,13 @@ var AppPlayer = function(id, config){
 
   var on_player_ready = function(e){
     self.ready = true;
-
     if(typeof config.player.on_ready === 'function'){
       config.player.on_ready(e);
     }
   };
 
   var on_state_change = function(e){
+    /* Add a call back here! */
     if(typeof config.player.on_change === 'function'){
       config.player.on_change(e);
     }
@@ -73,8 +107,6 @@ AppPlayer.default_config = {
     on_change: null
   }
 };
-
-
 
 var AppPlayerSearch = function(player){
   var search_button_selector = '#search-'+player.id+'-button';
@@ -99,7 +131,7 @@ var AppVolumeSlider = function(id){
   //set volume while dragging slider
   volume_slider.on('slide', function(e){
                   self.publish(e.value);
-                });
+  });
 };
 
 jQuery(function($){
@@ -112,36 +144,3 @@ jQuery(function($){
 function onYouTubePlayerAPIReady(){
   App.bootstrap();
 }
-
-/*global AppPlayer, YTHelper, AppVolumeSlider */
-var App = {
-  bootstrap: function(){
-    App.player1 = new AppPlayer('player1', {player: {on_ready: function(){ App.slider.value(-50); }}});
-    App.player2 = new AppPlayer('player2', {player: {on_ready: function(){ App.slider.value(-50); }}});
-    App.slider  = new AppVolumeSlider('volume-slider');
-  },
-
-  is_ready: function(){
-    return App.player1.ready && App.player2.ready;
-  },
-
-  volume: function(value){
-    if(!App.is_ready()){
-      return ;
-    }
-
-    var volume_player_1, volume_player_2;
-
-    if(value < 0){//means more on player 1
-      volume_player_1 = 100;
-      volume_player_2 = 100 + value;
-    }
-    else{//more on player 2
-      volume_player_1 = 100 - value;
-      volume_player_2 = 100;
-    }
-
-    App.player1.volume(volume_player_1);
-    App.player2.volume(volume_player_2);
-  },
-};
