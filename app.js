@@ -28,7 +28,7 @@ app.use(function(req, res, next) {
 
 app.use(express.static('client'));
 // This is where our private API is located
-app.use(express.static('api'));
+app.use(express.static('config.json'));
 
 
 // for more info, see: http://expressjs.com/starter/static-files.html
