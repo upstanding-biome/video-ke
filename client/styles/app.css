@@ -29,10 +29,10 @@ p a, p a:visited { line-height: inherit; }
 }
 
 .player.active.leftPlayer{
-  background-color: #DBF20F;
+  background-color: #0FF2E7;
 }
 .player.active.rightPlayer{
-  background-color: #0FF2E7;
+  background-color: #DBF20F;
 }
 
 /*mixer*/
@@ -59,6 +59,8 @@ h2{
 
 #volume-slider-state{
   margin-top:10px;
+  font-family: Righteous;
+  font-size: 22px;
 }
 
 /*search*/
@@ -150,23 +152,23 @@ a, a:visited {
   color: #fff;
 }
 .slider.slider-horizontal .slider-handle.triangle {
-    border-bottom-color: rgb(255, 17, 119);
+  border-bottom-color: rgb(255, 17, 119);
 }
 .slider-track {
-    background-color: #DBF20F;
-    background-image: linear-gradient(to bottom, #DBF20F, #DBF20F);
+  background-color: #DBF20F;
+  background-image: linear-gradient(to bottom, #DBF20F, #DBF20F);
 }
 .slider-selection {
-    background-color: #0FF2E7;
-    background-image: linear-gradient(to bottom, #0FF2E7, #0FF2E7);
+  background-color: #0FF2E7;
+  background-image: linear-gradient(to bottom, #0FF2E7, #0FF2E7);
 /*change font for "search" "100%" "search youtube" to Righteous google font*/
-    font-family: Righteous;
+  font-family: Righteous;
 }
 
 #volume-slider-state {
-    margin: 2% 0;
-    color: #fff;
-    font-size: 20px;
+  margin: 2% 0;
+  color: #fff;
+  font-size: 30px;
 }
 /*
 make player on right's background yellow and  and player on left's turquiose*/
@@ -179,19 +181,21 @@ make player on right's background yellow and  and player on left's turquiose*/
 }
 #searchBtn {
   color: #fff;
+  font-family: Righteous;
+  font-size: 22px;
 }
 
 .btn-danger {
   color: #fff;
   background-color: rgba(255, 17, 119, .8);
-  border-color: #d43f3a;
-  margin-right: 2%
+  margin-right: 2%;
+  font-family: Righteous;
+  font-size: 22px;
 }
 
 .btn-danger:hover, .btn-danger:focus, .btn-danger:active, .btn-danger.active, .open .dropdown-toggle.btn-danger {
   color: #fff;
   background-color: rgb(255, 17, 119);
-  border-color: #ac2925;
 }
 
 .form-control {
@@ -199,10 +203,10 @@ make player on right's background yellow and  and player on left's turquiose*/
 }
 
 .aButton {
-  background-color: #DBF20F;
-  margin-right: 30px;
+  background-color: #0FF2E7;
+  margin-right: 100px;
 }
 
 .bButton {
-  background-color: #0FF2E7;
+  background-color: #DBF20F;
 }
