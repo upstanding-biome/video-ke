@@ -157,9 +157,10 @@ a, a:visited {
     background-image: linear-gradient(to bottom, #DBF20F, #DBF20F);
 }
 .slider-selection {
-    /* background-color: #0FF2E7; */
+    background-color: #0FF2E7;
     background-image: linear-gradient(to bottom, #0FF2E7, #0FF2E7);
 /*change font for "search" "100%" "search youtube" to Righteous google font*/
+    font-family: Righteous;
 }
 
 #volume-slider-state {
@@ -189,12 +190,19 @@ make player on right's background yellow and  and player on left's turquiose*/
 
 .btn-danger:hover, .btn-danger:focus, .btn-danger:active, .btn-danger.active, .open .dropdown-toggle.btn-danger {
   color: #fff;
-  background-color: rgb(255, 17, 119); /*MAKE THIS CHANGE*/
-  /* border-color: #ac2925; REMOVE THIS ALL TOGETHER */
+  background-color: rgb(255, 17, 119);
+  border-color: #ac2925;
 }
-
-/*In results, change deck a to background color turquiose and change background color of btn for deck b to yellow*/
 
 .form-control {
   right: 40px;
+}
+
+.aButton {
+  background-color: #DBF20F;
+  margin-right: 30px;
+}
+
+.bButton {
+  background-color: #0FF2E7;
 }
