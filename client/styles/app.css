@@ -28,8 +28,11 @@ p a, p a:visited { line-height: inherit; }
   background-color: transparent;
 }
 
-.player.active{
-  background-color:#888;
+.player.active.leftPlayer{
+  background-color: #DBF20F;
+}
+.player.active.rightPlayer{
+  background-color: #0FF2E7;
 }
 
 /*mixer*/
@@ -101,6 +104,7 @@ h2{
 }
 
 .search input{
+  background-color: #000;
   width:83.3333%;
 }
 
@@ -178,8 +182,8 @@ make player on right's background yellow and  and player on left's turquiose*/
 
 .btn-danger {
   color: #fff;
-  background-color: rgba(255, 17, 119, .8);  /*MAKE THIS CHANGE AND IGNORE CROSS OUT HERE*/
-  /* border-color: #d43f3a;  REMOVE THIS ALL TOGETHER marg */
+  background-color: rgba(255, 17, 119, .8);
+  border-color: #d43f3a;
   margin-right: 2%
 }
 
