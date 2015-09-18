@@ -2,18 +2,17 @@
 
 ## Overview ##
 
-> Video-oke is a Karoake application that obtains videos from Youtube.
+> Video-ke is a dual video player application with crossfading between players that obtains videos from Youtube.
 
-> Video-oke was inspiried by picking up the codebase for TRNTBL3000, an app that allowed crossfading across two playlists. Video-oke incorporates this need but adds video functionality and the ability to search the Youtube API to add the songs you want to sing or listen to and use a crossfader in between songs.
+> Video-ke was inspired by working with the codebase for TRNTBL3000, an music player app that allowed crossfading across two playlists. Video-ke incorporates crossfading but adds video functionality and the ability to search the Youtube API to add the songs you want to sing or listen to and use a crossfader in between songs.
 
-## Dependencies ##
+## Integrated Technologies ##
+
 > Youtube API v3
 
-> Assert
+> JQuery, JQuery Slider
 
-> JQuery
-
-> Bootstrap
+> Bootstrap, Bootstrap Slider UI
 
 > Express.js
 
@@ -22,11 +21,13 @@
 ## Getting Started
 
 ### Installation
+
 Install dependencies `npm install `
 Other depencendencies are called from CDN
 
 ## Roadmap ##
-> Possible future updates may include the ability to:
+
+> Todo:
   -search the libraries from soundcloud's API and build your own playlists
   -have multiple DJ-ing sound clips and special FX
   display lyrics for karaoke usage
@@ -36,7 +37,7 @@ Other depencendencies are called from CDN
 
 ## Credits ##
 
-Version 2 Development Team:
+Development Team:
 
 Product Owner: [Cristian Avalos](https://github.com/cavalos0086/)
 
@@ -46,19 +47,21 @@ Scrum Master: [Kent Ou](https://github.com/kent10ou/)
 
 [Christopher Salam](https://github.com/ChristopherSalam/)
 
-Version 1 Development Team:
+Previous Codebase and heavy inspiration from:
 
-[Boundless Kitten](https://github.com/boundless-kitten)
-
-Features and styling heavily inspiried by [Monotom](https://github.com/monotom/html-youtube-mixer)
+[Boundless Kitten's](https://github.com/boundless-kitten) [Trntbl3000](http://trntbl3000.herokuapp.com/), 
+[Colorful Asteroid's](https://github.com/boundless-kitten) [Trntbl3001](http://trntbl3001.herokuapp.com/),
+[Monotom](https://github.com/monotom/html-youtube-mixer)
 
 ## How to Contribute ##
 
 Fork the Repo, and make changes there.
-
 Pull request into the UpstandingBiome/Video-ke master.
+Use the AirBNB JavaScript StyleGuide
 
 ## References ##
+
+> https://developers.google.com/youtube/iframe_api_reference/
 
 > https://jquery.com/
 
@@ -67,5 +70,3 @@ Pull request into the UpstandingBiome/Video-ke master.
 > https://expressjs.com/
 
 > https://nodejs.org/
-
-> https://www.npmjs.com/package/assert
