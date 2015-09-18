@@ -14,6 +14,7 @@
   <link href="styles/jquery-ui.custom.min.css" rel="stylesheet" type="text/css">
   <link href="styles/app.css" rel="stylesheet" type="text/css">
   <link async href="http://fonts.googleapis.com/css?family=Monoton" data-generated="http://enjoycss.com" rel="stylesheet" type="text/css" />
+  <link href='https://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
 </head>
 <body>
 <!--Github Ribbon-->
@@ -29,11 +30,19 @@
     <div class="container-fluid content" >
       <div class="row">
         <div class="player1div">
+<<<<<<< HEAD
           <iframe class="col-xs-6 player"
                 id="player1" type="text/html" width="640" height="390"
                 src="http://www.youtube.com/embed/ftLxvw_eFN0?enablejsapi=1" frameborder="0" allowfullscreen></iframe></div>
          <div class="player2div">
           <iframe class="col-xs-6 player"
+=======
+          <iframe class="col-xs-6 player leftPlayer"
+                id="player1" type="text/html" width="640" height="390"
+                src="http://www.youtube.com/embed/ftLxvw_eFN0?enablejsapi=1" frameborder="0" allowfullscreen></iframe></div>
+         <div class="player2div">
+          <iframe class="col-xs-6 player rightPlayer"
+>>>>>>> 1c966db858e601b72fd2b599ddb24481448d25c7
                 id="player2" type="text/html" width="640" height="390"
                 src="http://www.youtube.com/embed/JpI8szXsH7k?enablejsapi=1" frameborder="0" allowfullscreen></iframe></div>
       </div>
@@ -56,12 +65,21 @@
       <button id = 'searchBtn' class="btn btn-danger" onclick='search()'>Search</button>
     </div>
     <div class="col-xs-3"></div>
+<<<<<<< HEAD
     </div>
 
 
     <div id="results">
-      
+
     </div>
+=======
+    </div>
+
+
+    <div id="results">
+
+    </div>
+>>>>>>> 1c966db858e601b72fd2b599ddb24481448d25c7
 <!-- Captures input and calls YouTube API -->
       <script>
       function init(){
@@ -98,7 +116,11 @@
             var id = data.result.items[i].id.videoId;
             $('#results').append('<br/><div class="row padding">');
             $('#results').append('<div class="col-xs-3"><a href="#"><img src="' + url + '"/></a></div>');
+<<<<<<< HEAD
             $('#results').append('<div class="col-xs-7"><p class="title">' + items[i].snippet.title+'</p><p class="descrip">' + items[i].snippet.description + '</p><button class="loadVid btn btn-danger" onclick="makePlayerA(\'' + id + '\')">Deck A</button><button class="loadVid btn btn-danger" onclick="makePlayerB(\'' + id + '\')">Deck B</button></div></div>');
+=======
+            $('#results').append('<div class="col-xs-7"><p class="title">' + items[i].snippet.title+'</p><p class="descrip">' + items[i].snippet.description + '</p><button class="loadVid aButton btn btn-danger" onclick="makePlayerA(\'' + id + '\')">Deck A</button><button class="loadVid bButton btn btn-danger" onclick="makePlayerB(\'' + id + '\')">Deck B</button></div></div>');
+>>>>>>> 1c966db858e601b72fd2b599ddb24481448d25c7
             $('#results').append('<br/>');
             };
           });

@@ -30,7 +30,6 @@ app.use(express.static('client'));
 // This is where our private API is located
 app.use(express.static('api'));
 
-
 // for more info, see: http://expressjs.com/starter/static-files.html
 
 //========================================================//

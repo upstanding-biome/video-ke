@@ -1,5 +1,3 @@
-
-/*generel*/
 body{
   margin:0;
   padding:0;
@@ -28,8 +26,11 @@ p a, p a:visited { line-height: inherit; }
   background-color: transparent;
 }
 
-.player.active{
-  background-color:#888;
+.player.active.leftPlayer{
+  background-color: #0FF2E7;
+}
+.player.active.rightPlayer{
+  background-color: #DBF20F;
 }
 
 /*mixer*/
@@ -41,7 +42,7 @@ h2{
   border-bottom-color: #cc181e;
   border-width: 0 29px 30px;
   top:-11px;
-  margin-left:-30px;
+  margin-left:-36px;
 }
 
 .slider-selection {
@@ -56,6 +57,8 @@ h2{
 
 #volume-slider-state{
   margin-top:10px;
+  font-family: Righteous;
+  font-size: 22px;
 }
 
 /*search*/
@@ -87,7 +90,6 @@ h2{
   right:0px;
   background-color:#666;
   border-top-left-radius: 3px;
-
   -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
   filter: alpha(opacity=80);
   -moz-opacity:0.8;
@@ -101,6 +103,7 @@ h2{
 }
 
 .search input{
+  background-color: #000;
   width:83.3333%;
 }
 
@@ -131,3 +134,85 @@ h2{
 .record:hover .links a:hover{
   color:#fff;
 }
+
+body {
+  background-color: #000;
+  color: #fff;
+}
+#searchTxt {
+  color: #000000;
+}
+button {
+  color: #111;
+}
+a, a:visited {
+  color: #fff;
+}
+.slider.slider-horizontal .slider-handle.triangle {
+  border-bottom-color: rgb(255, 17, 119);
+}
+.slider-track {
+  background-color: #DBF20F;
+  background-image: linear-gradient(to bottom, #DBF20F, #DBF20F);
+}
+.slider-selection {
+  background-color: #0FF2E7;
+  background-image: linear-gradient(to bottom, #0FF2E7, #0FF2E7);
+/*change font for "search" "100%" "search youtube" to Righteous google font*/
+  font-family: Righteous;
+}
+
+#volume-slider-state {
+  margin: 2% 0;
+  color: #fff;
+  font-size: 30px;
+}
+/*
+make player on right's background yellow and  and player on left's turquiose*/
+/*
+<div class="slider slider-horizontal" style="width: 60%;">*/
+
+.btn {
+  margin: 2% 0;
+  padding: 10px 22px;
+  box-shadow: none;
+}
+#searchBtn {
+  color: #000;
+  font-family: Righteous;
+  font-size: 22px;
+  letter-spacing: 1px;
+}
+
+.btn:focus {
+    outline: 0;
+}
+
+.btn-danger {
+  color: #000;
+  background-color: rgba(255, 17, 119, .8);
+  margin-right: 2%;
+  font-family: Righteous;
+  font-size: 22px;
+  border-color: transparent;
+}
+
+.btn-danger:hover, .btn-danger:focus, .btn-danger:active, .btn-danger.active, .open .dropdown-toggle.btn-danger {
+  color: #000;
+  background-color: rgb(255, 17, 119);
+}
+
+.form-control {
+  right: 40px;
+}
+
+.aButton {
+  background-color: #0FF2E7;
+  margin-right: 100px;
+}
+
+.bButton {
+  background-color: #DBF20F;
+}
+
+
