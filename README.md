@@ -41,11 +41,11 @@ Other depencendencies are called from CDN
 
 Development Team:
 
-Product Owner: [Cristian Avalos](https://github.com/cavalos0086/)
+__Product Owner__: [Cristian Avalos](https://github.com/cavalos0086/)
 
-Scrum Master: [Kent Ou](https://github.com/kent10ou/)
+__Scrum Master__: [Kent Ou](https://github.com/kent10ou/)
 
-Development Team:
+__Development Team__:
 
 [Kim Merino](https://github.com/dafabulousteach/)
 
