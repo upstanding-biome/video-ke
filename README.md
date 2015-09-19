@@ -4,7 +4,7 @@
 
 > Video-ke is a dual video player application with crossfading between players that obtains videos from Youtube.
 
-![Alt text](http://github.com/upstanding-biome/vide-oke/client/assets/appScreenShot.png)
+![alt tag](https://raw.github.com/upstanding-biome/video-ke/client/assets/appScreenShot.png)
 
 > Video-ke was inspired by working with the codebase for TRNTBL3000, an music player app that allowed crossfading across two playlists. Video-ke incorporates crossfading but adds video functionality and the ability to search the Youtube API to add the songs you want to sing or listen to and use a crossfader in between songs.
 
