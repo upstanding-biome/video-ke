@@ -4,6 +4,8 @@
 
 > Video-ke is a dual video player application with crossfading between players that obtains videos from Youtube.
 
+![Alt text](https://github.com/dafabulousteach/Video-oke/blob/master/appScreenShot.png)
+
 > Video-ke was inspired by working with the codebase for TRNTBL3000, an music player app that allowed crossfading across two playlists. Video-ke incorporates crossfading but adds video functionality and the ability to search the Youtube API to add the songs you want to sing or listen to and use a crossfader in between songs.
 
 ## Integrated Technologies ##
@@ -39,9 +41,11 @@ Other depencendencies are called from CDN
 
 Development Team:
 
-Product Owner: [Cristian Avalos](https://github.com/cavalos0086/)
+__Product Owner__: [Cristian Avalos](https://github.com/cavalos0086/)
 
-Scrum Master: [Kent Ou](https://github.com/kent10ou/)
+__Scrum Master__: [Kent Ou](https://github.com/kent10ou/)
+
+__Development Team__:
 
 [Kim Merino](https://github.com/dafabulousteach/)
 
